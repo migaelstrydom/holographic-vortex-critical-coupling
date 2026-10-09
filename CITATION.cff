@@ -6,6 +6,16 @@ authors:
     given-names: Migael
     email: migael@strydom.me.uk
 repository-code: "https://github.com/migaelstrydom/holographic-vortex-critical-coupling"
+version: 1.0.0
+date-released: 2026-10-09
+doi: 10.5281/zenodo.23267448
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23267448
+    description: "Concept DOI: all versions, resolves to the latest"
+  - type: doi
+    value: 10.5281/zenodo.23267449
+    description: "Version 1.0.0, the version cited in the paper"
 # The code is MIT-licensed (LICENSE). The paper text, bibliography, figures and
 # README are CC BY 4.0 (LICENSE-docs); see NOTICE. CFF reads a list of licences
 # as a choice between them, not a split, so only the code's licence is given.
