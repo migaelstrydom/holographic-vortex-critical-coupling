@@ -1,0 +1,415 @@
+\section{No charged instability above \texorpdfstring{$\alpha_\star = 2/3$}{alpha* = 2/3}}
+\label{sec:4}
+
+\subsection{At zero temperature the brane interior is \texorpdfstring{$\mathrm{AdS}_3 \times \mathbb{R}^2$}{AdS3 x R2}}
+\label{sec:4.1}
+
+Since the field is measured in units of $T^2$, cooling at fixed physical
+field sends $B u_H^2$, and with it $\beta = \alpha (B u_H^2)^2$, to
+infinity: the zero-temperature limit at fixed $\alpha$ is
+$\beta \to \infty$. In this limit the interior of the brane develops a long
+throat~\cite{DHoker:2009mmn}. It approaches the product geometry
+$\mathrm{AdS}_3 \times \mathbb{R}^2$, in which the flux plane $(x,y)$ has
+frozen at a finite proper size and the direction $z$ along the field has
+joined $t$ and $r$ to form a three-dimensional anti-de Sitter space. In our
+conventions $U = (r - r_0)^2/\ell_3^2$, $e^{2Z} = c_Z (r - r_0)^2$,
+$e^{2V} = v$ solves the full Einstein--Yang--Mills equations if and only
+if
+\begin{equation}
+\label{eq:throat}
+\ell_3^2 = \tfrac13, \qquad v = B\sqrt{\alpha/6}~.
+\end{equation}
+The constants $c_Z$ and $r_0$ can be removed by rescaling $z$ and shifting
+$r$.
+
+Neither $v$ nor $B$ is meaningful on its own, since rescaling the flux
+plane, $(x,y) \to k\,(x,y)$, sends both $e^{2V}$ and $B$ to themselves
+divided by $k^2$. The scale-invariant form of~\eqref{eq:throat} is
+\begin{equation}
+\alpha B^2 e^{-4V} = 6, \qquad B\,e^{-2V} = \sqrt{6/\alpha}~.
+\end{equation}
+The first is the condition for the throat to exist. The second is the
+magnetic field measured in the proper units of the frozen flux plane, and
+it controls the condensate. At finite $\beta$ the throat joins the
+$\mathrm{AdS}_5$ region at the crossover radius $r_c = (\beta/6)^{1/4}$,
+where the outer growth $e^{2V} \simeq r^2$ meets the frozen value
+$\sqrt{\beta/6}$ (figure~\ref{fig:throat}).
+
+\begin{figure}[t]
+\centering
+\includegraphics{throat_geometry}
+\caption{The magnetic brane forms its throat. (a)~The proper size $e^{2V}$
+of the flux plane against $\ln r$ at fixed temperature, for
+$\beta = 0, 1, 45, 10^4, 10^8$ (light to dark; $\beta = 0$ dashed). Outside
+the crossover radius $r_c$ (circles) it grows as $r^2$, as in
+$\mathrm{AdS}_5$; inside it the flux plane freezes at
+$e^{2V} \to v = \sqrt{\beta/6}$. (b)~The invariant $\beta e^{-4V}$, which
+is $0$ at the boundary and $6$ on the $\mathrm{AdS}_3 \times \mathbb{R}^2$
+fixed point. Its horizon value is $3.58$, $5.613$ and $5.9877$ at
+$\beta = 45$, $10^4$ and $10^8$, and the plateau near $6$ lengthens as
+$\ln r_c = \tfrac14\ln(\beta/6)$.}
+\label{fig:throat}
+\end{figure}
+
+At small temperature the throat is a BTZ black hole~\cite{Banados:1992wn}
+times the flux plane:
+$U = ((r-r_0)^2 - h^2)/\ell_3^2$, with horizon at $r - r_0 = h$, solves the
+same equations with the same $\ell_3$ and $v$
+(appendix~\ref{app:numerics-brane}). This is the throat on the
+finite-temperature onset curve, and it governs the approach to
+$\alpha_\star$ in section~\ref{sec:4.6}.
+
+\subsection{The field drops out and the onset becomes a Breitenlohner--Freedman bound}
+\label{sec:4.2}
+
+On the throat metric the Sturm--Liouville equation of section~\ref{sec:3}
+becomes an Euler equation in $\rho = r - r_0$, $(\rho^3 w')' + b\,\rho\,w = 0$, and $w = \rho^{-\Delta}$
+gives the indicial equation
+\begin{equation}
+\Delta(\Delta - 2) = -b, \qquad b \equiv B\,\ell_3^2\,e^{-2V} = \sqrt{\frac{2}{3\alpha}}~.
+\end{equation}
+The field has cancelled because the frozen flux plane grows in
+proportion to $B$, so the field in throat units, $b$, is fixed by the
+coupling alone. In the language of the $\mathrm{AdS}_3$ factor, the lowest
+Landau level of the $W$ boson is a scalar of mass $m^2\ell_3^2 = -b$, and
+the Breitenlohner--Freedman
+bound~\cite{Breitenlohner:1982bm,Breitenlohner:1982jf}
+$m^2\ell_3^2 \ge -1$ is violated exactly
+when $b > 1$. Violating it is sufficient for an instability at zero
+temperature, and we show below that it is also necessary, so that
+\begin{equation}
+\text{the instability survives to } T = 0 \quad\Longleftrightarrow\quad \alpha < \alpha_\star = \tfrac23~.
+\end{equation}
+We call $\alpha_\star$ the critical coupling. As $\alpha \to 0$, $b \to \infty$
+and we recover the probe tachyon of~\cite{Ammon:2011je}. Increasing
+$\alpha$ lowers the throat field $b$, which squeezes the tachyon until, at
+$\alpha_\star$, the two indicial roots meet at $\Delta = 1$.
+
+That the bound is also necessary needs an argument, because
+violating the bound of a throat is sufficient for an instability but not in
+general necessary~\cite{Faulkner:2010gj,Horowitz:2010gk}: a bound state can
+sit in the crossover between the throat and the boundary. For charged
+scalars the two criteria were found numerically to
+agree~\cite{Denef:2009tp}, and the bound is used as the criterion
+in~\cite{Gubser:2009cg,Horowitz:2009ij}, but this is a
+property of each model, and in $d = 3$ they disagree
+(section~\ref{sec:4.3}).
+
+Here the zero-temperature brane is a single geometry, and the coupling
+enters the zero-mode problem only through $b = \sqrt{\alpha_\star/\alpha}$,
+which plays the role of an eigenvalue. In the throat the mode behaves as
+$(r - r_0)^{-1 \pm \sqrt{1 - b}}$, so the operator has a continuum for
+$b > 1$, and a zero mode at a coupling above $\alpha_\star$ would be a
+bound state below the threshold $b = 1$. Such a bound state and the
+source-free solution at threshold have vanishing Wronskian at both ends,
+at the boundary because both are source-free and in the throat because the
+bound state decays, so by Sturm's comparison
+theorem~\cite[theorem~9.39]{Teschl:2009mmqm} the threshold solution would
+have a zero. At threshold the solution in the throat has the form
+$(r - r_0)\,w = c_0 + c_1\ln\big((r - r_0)/\rho_\star\big)$, with
+$\rho_\star$ the top of the throat (section~\ref{sec:4.6}), and a zero
+inside the throat would show up as $c_1/c_0 > 0$. We find
+no zero and $c_1/c_0 = -0.035$: the would-be zero lies far
+outside the throat, at $\ln\big((r - r_0)/\rho_\star\big) = +28.6$. There is therefore
+no bound state, and for every $\alpha > \alpha_\star$ the D'Hoker--Kraus
+brane is stable against this mode at every field. A direct check agrees:
+integrated from the throat to the boundary at couplings between
+$\alpha_\star$ and $4\alpha_\star$, the solution that decays in the throat
+always arrives with a source of the same sign
+(appendix~\ref{app:numerics-onset}).
+
+At finite temperature the statement is numerical. On the onset curve
+$\alpha/\alpha_\star = (1 - \varepsilon/6)/b_h^2$, with
+$\varepsilon = 6 - \beta e^{-4V}$ and $b_h = B_c\ell_3^2 e^{-2V}$ at the
+horizon. Since $\varepsilon > 0$ at finite temperature, $b_h \ge 1$
+implies $\alpha < \alpha_\star$. Shooting from the horizon up to
+$\beta \approx 10^{66}$, where $\alpha = 0.6626$, the onset coupling rises
+strictly and stays below $\alpha_\star$, with $b_h \ge 1.003$
+(appendix~\ref{app:numerics-onset}); beyond that the matching analysis of
+section~\ref{sec:4.6} takes over.
+
+\subsection{In \texorpdfstring{$d+1$}{d+1} dimensions \texorpdfstring{$\alpha_\star = 16/(d(d-1)(d-2))$}{alpha* = 16/(d(d-1)(d-2))}}
+\label{sec:4.3}
+
+The argument is not specific to four boundary dimensions. The reduction to
+the polarised lowest Landau level goes through as before, with
+$P = U e^{(d-3)Z}$ and $Q = B e^{(d-3)Z - 2V}$; the $d - 3$ directions along
+the field only contribute a volume factor. The throat is now
+$\mathrm{AdS}_{d-1} \times \mathbb{R}^2$, one of the magnetic vacua that
+exist in every dimension~\cite{Lu:2013eoa}, with
+\begin{equation}
+\ell_{d-1}^2 = \frac{(d-2)^2}{d(d-1)}, \qquad \frac{B\ell_{d-1}^2}{v} = \frac{(d-2)^{3/2}}{\sqrt{\alpha\,d(d-1)}}~,
+\end{equation}
+and the indicial equation becomes $\Delta(\Delta - (d-2)) = -B\ell_{d-1}^2/v$,
+with $v = e^{2V}$ again the frozen size of the flux plane. Comparing with
+the Breitenlohner--Freedman value $(d-2)^2/4$ for $\mathrm{AdS}_{d-1}$
+gives
+\begin{equation}
+\alpha_\star(d) = \frac{16}{d(d-1)(d-2)}~,
+\end{equation}
+which is $8/3$, $2/3$, $4/15$ and $2/15$ for $d = 3, 4, 5, 6$.
+
+For $d = 4, 5, 6$ this bound is the critical coupling. We constructed the
+zero-temperature brane in each dimension, flowing from
+$\mathrm{AdS}_{d+1}$ into the throat along its single irrelevant
+deformation, and the threshold mode on it has no zero, with
+$c_1/c_0 < 0$ (table~\ref{tab:dims}). At finite temperature the
+onset coupling for $d = 5, 6$, as for $d = 4$, rises monotonically, stays
+below $\alpha_\star(d)$ and approaches it as $T \to 0$
+(appendix~\ref{app:numerics-onset}).
+
+In $d = 3$ the bound is not the critical coupling. The throat is
+$\mathrm{AdS}_2 \times \mathbb{R}^2$, and on the extremal magnetic
+Reissner--Nordstr\"om--$\mathrm{AdS}_4$ brane the threshold mode has one
+zero deep in the throat, so a bound state sits in the crossover below the
+$\mathrm{AdS}_2$ bound. It disappears only at
+\begin{equation}
+\alpha_c(3) = 3.0370~,
+\end{equation}
+which we find by three methods and confirm with an independent
+construction (appendix~\ref{app:numerics-onset}). At finite temperature the
+onset coupling rises through $8/3$ and tends to $\alpha_c(3)$ as $T \to 0$.
+The bound of~\cite{Wong:2013rda} on the magnetic $\mathrm{AdS}_4$ brane,
+$\alpha_\star(3) = 8/3$ in our variables, is therefore sufficient for the
+instability but, contrary to the statement in~\cite{Wong:2013rda} that the
+$W$ bosons condense only for $\alpha < 8/3$, not necessary; there the
+zero-temperature end of the onset curve was taken from the bound. Our
+finite-temperature onset crosses $8/3$ only at $T/\sqrt B = 7.4\times10^{-4}$.
+
+\subsection{The criterion is \texorpdfstring{$C_J/C_T < 8/(d^2(d+1))$}{C\_J/C\_T < 8/(d\^{}2(d+1))}}
+\label{sec:4.4}
+
+The coupling $\alpha = \kappa^2/\hat g^2$ depends on how the Yang--Mills term
+is normalised relative to the Einstein--Hilbert term, and papers differ;
+\cite{Wong:2013rda}, for instance, uses $2e^2L^2/\kappa^2$. A
+convention-free form uses the central charges $C_T$ and $C_J$, which
+normalise the two-point functions of the stress tensor and of the current
+that the magnetic field couples to; criteria of this kind were written in
+terms of $C_T$ and $C_J$ in~\cite{Nakayama:2015hga}, as an AdS form of the
+weak gravity conjecture, for the $\mathrm{AdS}_2$ bound of the electric
+brane. In the conventions
+of~\cite{Osborn:1993cr}, Einstein gravity with a Maxwell term
+$-F^2/4\hat g^2$ in $\mathrm{AdS}_{d+1}$ gives~\cite{Buchel:2009sk,Freedman:1998tz}
+\begin{equation}
+C_T = \frac{d+1}{d-1}\,\frac{\Gamma(d+1)}{\pi^{d/2}\,\Gamma(d/2)}\,\frac{L^{d-1}}{\kappa^2}, \qquad
+C_J = \frac{(d-2)\,\Gamma(d)}{2\pi^{d/2}\,\Gamma(d/2)}\,\frac{L^{d-3}}{\hat g^2}~,
+\end{equation}
+where for the non-abelian field the second formula holds for each
+generator, in particular for the $\tau^3$ that carries the background flux.
+The ratio is
+\begin{equation}
+\frac{C_J}{C_T} = \frac{(d-1)(d-2)}{2d(d+1)}\,\alpha~,
+\end{equation}
+which is $3\alpha/20$ in $d = 4$, and the result of section~\ref{sec:4.3}
+becomes
+\begin{equation}
+\text{the magnetised plasma is unstable at } T = 0 \quad\Longleftrightarrow\quad \frac{C_J}{C_T} < \frac{8}{d^2(d+1)}~.
+\end{equation}
+Here unstable means that the normal phase has a linear charged
+instability at some field. $C_J$ is normalised by the algebra of the charges, $[Q^a, Q^b] = i\epsilon^{abc}Q^c$, so
+that a doublet carries $T^3 = \pm\frac12$ (appendix~\ref{app:dictionary}).
+The criterion holds for $d = 4, 5, 6$; in $d = 3$ the bound value $2/9$ is replaced by
+$\alpha_c(3)/12 = 0.253$ (table~\ref{tab:dims}).
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{cccccccc}
+\toprule
+$d$ & throat & $\alpha_\star(d)$ & $c_1/c_0$ & critical coupling & $C_J/C_T$ threshold & \multicolumn{2}{c}{supersymmetric check} \\
+ & & & & & & $\alpha$ & $C_J/C_T$ \\
+\midrule
+$3$ & $\mathrm{AdS}_2 \times \mathbb{R}^2$ & $8/3$ & $+0.123$ & $\alpha_c(3) = 3.037$ & $0.253$ & $2$ & $1/6$ \\
+$4$ & $\mathrm{AdS}_3 \times \mathbb{R}^2$ & $2/3$ & $-0.035$ & $\alpha_\star$ & $1/10$ & $1/4$ & $3/80$ \\
+$5$ & $\mathrm{AdS}_4 \times \mathbb{R}^2$ & $4/15$ & $-0.350$ & $\alpha_\star$ & $4/75$ & -- & -- \\
+$6$ & $\mathrm{AdS}_5 \times \mathbb{R}^2$ & $2/15$ & $-0.996$ & $\alpha_\star$ & $2/63$ & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{The critical coupling by boundary dimension $d$: the throat, its
+Breitenlohner--Freedman value $\alpha_\star(d) = 16/(d(d-1)(d-2))$, the
+logarithmic ratio $c_1/c_0$ of the zero-temperature threshold mode,
+$\rho^{(d-2)/2}w = c_0 + c_1\ln(\rho/\rho_\star)$ in the throat (positive signals a bound state in the
+crossover), the resulting critical coupling, the threshold in $C_J/C_T$, and
+the two supersymmetric theories against which the map is checked
+(appendix~\ref{app:dictionary}).}
+\label{tab:dims}
+\end{table}
+
+The criterion puts a number on the description
+in~\cite{Ammon:2009xh,Wong:2013rda} of the coupling as the fraction of the
+degrees of freedom that are charged. The one top-down case with a known
+answer agrees with it. The $\mathcal{N} = 1$ R-current of any
+four-dimensional superconformal theory has $C_R/C_T = 1/10$
+(appendix~\ref{app:dictionary}), exactly the threshold for a vector of
+unit R-charge. In $\mathcal{N} = 4$ super-Yang--Mills theory in an
+equal-charge R-symmetry field, whose throat is that of D'Hoker and Kraus
+uplifted on $S^5$, the $SO(6)$ $W$ bosons carry R-charge $4/3$ and so see
+$\alpha = \tfrac23\big(\tfrac34\big)^2 = \tfrac38 < \alpha_\star$; their
+throat mass $\ell_3^2m^2 = -4/3$, from eq.~(3.21) of~\cite{Donos:2011pn} at equal charges, is $-b$ at this
+coupling, and they are the unstable mode found
+in~\cite{Almuhairi:2011ws,Donos:2011pn}. That $3/8$ lies close to $\alpha_L$
+does not place this theory in either lattice regime of section~\ref{sec:5},
+which treats Einstein--$SU(2)$ theory only. In any theory whose magnetic
+sector reduces to such a charged vector on an
+$\mathrm{AdS}_{d-1} \times \mathbb{R}^2$ throat, $C_J/C_T$ below the
+threshold implies an instability. The converse also needs the absence of a
+bound state in the crossover, which we have shown for the
+Einstein--Yang--Mills brane and which fails in $d = 3$.
+
+We check the map from $\alpha$ to $C_J/C_T$ at two points where both sides
+are fixed independently (appendix~\ref{app:dictionary}). In Romans' gauged
+supergravity in $d = 4$, $\alpha_{\rm SUSY} = 1/4$, and the
+$\mathcal{N} = 2$ Ward identities give $C_J(SU(2)_R)/C_T = 3/80 =
+(3/20)(1/4)$. In minimal gauged supergravity in $d = 3$,
+$\alpha_{\rm SUSY} = 2$ and $C_R/C_T = 1/6 =
+\alpha/12$~\cite{Closset:2012ru}. Both points lie inside the
+unstable window, the $d = 4$ one in the crystal regime of
+section~\ref{sec:5}. Einstein--$SU(2)$ theory with $SU(2)$ flux is not a
+consistent truncation of Romans' theory, since Romans' scalar is sourced
+by the flux, so the comparison fixes the map, not the phase diagram of a string
+vacuum. Whether any top-down theory reaches $\alpha_\star$ is open.
+
+\subsection{No other charged mode is unstable above \texorpdfstring{$\alpha_\star$}{alpha*}}
+\label{sec:4.5}
+
+The critical coupling bounds the whole charged sector, not only the
+polarised lowest Landau level for which it was derived. Static,
+$z$-independent fluctuations of $W_\mu$ on any diagonal magnetic brane sort
+by a single Landau index $n \ge 0$, since the Landau ladder operators shift
+the level by one and the metric depends on $r$ only; $n = 0$ is the
+polarised lowest Landau level (appendix~\ref{app:charged-channels}). Every
+level with $n \ge 1$ is stable: its static energy, a sum of positive
+radial terms and a positive semi-definite transverse form, vanishes only
+on pure gauge, so no source-free, horizon-regular zero mode exists.
+Only $n = 0$ has a negative transverse term, and its competition with the
+radial gradient is the eigenvalue problem of section~\ref{sec:3}. The
+argument uses only positivity, so it holds at every $\alpha$, $B$ and $T$,
+and it survives momentum along $z$.
+
+The argument also covers time-dependent perturbations. The brane has no
+$A_t$ and no $g_{ti}$, so a growing mode must have real $\omega^2$, hence
+$\omega = i\Gamma$ and negative static energy. An instability can therefore
+only set in through a static zero mode at $\omega = 0$
+(appendix~\ref{app:charged-channels}). Together with the $n = 0$
+result, the charged sector has no linear instability above $\alpha_\star$.
+
+We assume that the neutral sector, $A^3$ and the metric, is stable. No
+growing neutral mode of the D'Hoker--Kraus brane is known. None has been
+found at zero momentum in the scalar and tensor
+channels~\cite{Janiszewski:2015ura,Shah:2024lym}, or, with a Chern--Simons
+term, along the field~\cite{Ammon:2017ded}. Static modes across the field
+respect the bound in the throat of the $U(1)^3$
+truncation~\cite{Donos:2011pn}. In our theory, those of the sector the
+condensate sources respect it (appendix~\ref{app:response-throat}) and have
+no zero mode on any brane we solved (section~\ref{sec:5}). The other static
+sectors, and all time-dependent modes across the field, have not been
+computed. The known modulated instabilities of
+magnetic branes need couplings our theory does not have: a neutral scalar
+coupled to $F_{\mu\nu}F'^{\mu\nu}$, with $F'$ a second abelian field
+strength~\cite{Donos:2011qt,Donos:2016hsd}, or, for the Chern--Simons
+instability of~\cite{Nakamura:2009tf}, an electric background and a cubic
+Casimir, which $SU(2)$ lacks.
+
+\subsection{The approach to \texorpdfstring{$\alpha_\star$}{alpha*} has Berezinskii--Kosterlitz--Thouless form}
+\label{sec:4.6}
+
+We continued the onset calculation of section~\ref{sec:3} up the ladder of
+section~\ref{sec:3.3} to $\beta = 10^{11}$. The interior reaches
+the fixed point, with the invariant $\beta e^{-4V}$ at the horizon rising to
+$6$, and the throat field $b_h$ at the horizon falls towards the bound
+$1$ (appendix~\ref{app:numerics-onset}). Since
+$2/(3b_h^2) = 6\alpha/(\beta e^{-4V})$ on the onset curve, together these
+say $\alpha \to 2/3$. The approach is very slow: at $\beta = 10^{11}$,
+where $B_c u_H^2 = 4.1 \times 10^5$, the coupling has only reached $0.591$.
+
+This is the holographic Berezinskii--Kosterlitz--Thouless scaling
+of~\cite{Kaplan:2009kr,Jensen:2010ga,Iqbal:2010eh,Jensen:2010vx,Evans:2010hi},
+a Breitenlohner--Freedman bound crossed as a parameter is tuned. Here it
+is the bound of an $\mathrm{AdS}_3$ throat, whereas
+\cite{Iqbal:2010eh,Jensen:2010vx,Evans:2010hi} and the D3/D5 system
+of~\cite{Jensen:2010ga} cross an $\mathrm{AdS}_2$ bound, and the holographic picture
+of~\cite{Kaplan:2009kr} is a scalar below the bound of the full
+$\mathrm{AdS}_{d+1}$. With $\nu = \sqrt{b_h - 1}$ the mode in the throat oscillates, up to
+corrections of order $\varepsilon$, as
+$\rho\,w \propto \cos(\nu\ln\rho + \ldots)$, with $\rho = r - r_0$, and the
+onset is where the throat is long enough to hold the solution that joins
+the horizon to the ultraviolet without an extra node.
+
+Both ends of the oscillation can be computed, and matching them has no free
+parameter. At the horizon the solution on the BTZ throat is a
+hypergeometric function, whose connection formula gives a phase $\chi(\nu)$
+in closed form. At the ultraviolet end, the outer region of every rung is,
+in scaled variables, the same zero-temperature brane; integrating the
+source-free mode inwards from the boundary on it gives a phase
+$\phi_\star(\nu)$ in the throat. The two solutions match when
+\begin{equation}
+\nu\,\ln(\rho_\star/h) = \chi(\nu) + \phi_\star(\nu)~,
+\end{equation}
+where $h$ is the BTZ horizon and $\rho_\star$ the radius at which the
+proper area $e^{2V}$ of the flux plane has doubled from its throat value
+(figure~\ref{fig:matching}). This condition reproduces $\nu$ on the ladder
+and the direct solves by horizon shooting (appendix~\ref{app:numerics-matching}).
+
+\begin{figure}[t]
+\centering
+\includegraphics{matching_diagram}
+\caption{The matching diagram: the marginal mode on the $\beta = 10^8$ rung
+against $\ln(\rho/h)$, with the exact BTZ horizon solution and the $T = 0$
+outer mode laid over it, the three regions shaded and $h$, $\rho_\star$ and
+the crossover radius $r_c$ marked.}
+\label{fig:matching}
+\end{figure}
+
+As $\nu \to 0$, $\chi + \phi_\star \to \pi$: the throat holds one
+half-oscillation of the mode. With $\ln(\rho_\star/h) \simeq \tfrac14\ln\beta$
+(appendix~\ref{app:numerics-matching}),
+$\nu^2 \simeq (\alpha_\star - \alpha)/2\alpha_\star$ and
+$\beta \propto B^2/T^4$ at fixed field, the onset obeys
+\begin{equation}
+\ln\beta_c \simeq \frac{8\pi}{\sqrt{3(\alpha_\star - \alpha)}}~, \qquad
+T_c \propto \sqrt{B}\,\exp\!\Big(-\frac{2\pi}{\sqrt{3(\alpha_\star - \alpha)}}\Big) = \sqrt B\,e^{-3.63/\sqrt{\alpha_\star-\alpha}}~.
+\end{equation}
+This is the law of~\cite{Iqbal:2010eh,Jensen:2010vx}; the same law arises
+from the annihilation of fixed points, with no bound crossed,
+in~\cite{Faedo:2019nxw}. Since $\alpha > \alpha_L$ wherever it applies,
+$T_c$ here is the spinodal of the normal phase (section~\ref{sec:5.3}): the
+essential singularity is that of the onset of the instability, not of an
+infinite-order transition.
+
+The law is asymptotic, and it sets in only at extremely low temperature.
+The horizon phase is analytic in $\nu$,
+$\chi = \pi/2 - 2\nu\ln 2 + O(\nu^3)$, so its corrections only shift
+$\ln\beta_c$ by a constant. The outer phase is not. At $\alpha_\star$ the
+mode arrives in the throat almost entirely as the non-logarithmic solution,
+with $c_1/c_0 = -0.035$, and matching it onto
+$\cos(\nu\ln(\rho/\rho_\star) + \phi_\star)$ gives
+$\tan\phi_\star = |c_1/c_0|/\nu + 0.50\,\nu + O(\nu^3)$. So $\phi_\star$
+reaches its limit $\pi/2$ only for $\nu \ll 0.035$, that is
+$\ln\beta \gg 400$. Over the throat part of the ladder, $\beta \ge 10^3$ or
+$0.25 \le \nu \le 0.6$, $\phi_\star$ instead sits on a plateau of about
+$0.22$--$0.25$ (figure~\ref{fig:approach}, right). In this range the
+throat needs to hold less phase, so the plasma condenses more easily than the asymptotic law
+predicts. A direct fit on the ladder gives
+\begin{equation}
+T_c \propto \sqrt B\,e^{-2.25/\sqrt{\alpha_\star - \alpha}}~,
+\end{equation}
+a coefficient $38\%$ below the asymptotic one. Shooting from the horizon
+far beyond the ladder confirms that the effective coefficient rises
+slowly towards its asymptotic value, as the matching condition predicts
+(appendix~\ref{app:numerics-matching}); the asymptotic law takes over only
+at $T_c/\sqrt B \sim e^{-100}$.
+
+\begin{figure}[t]
+\centering
+\includegraphics{approach_law}
+\caption{The approach law. Left: $1/\nu$ against $\ln\beta$ with the
+ladder, the matching prediction, the ladder fit and (inset, to
+$\ln\beta = 2000$) the $1/4\pi$ asymptote. Right: $\chi$, $\phi_\star$ and
+$\chi + \phi_\star$ against $\nu$ with the $\pi$ limit, the turnover at
+$\nu = |c_1/c_0| = 0.035$ and the throat part of the ladder, $0.25 \le \nu \le 0.6$.
+Below $\nu = 0.02$ (dashed) $\phi_\star$ is the small-$\nu$ form
+$\pi/2 - \arctan(\nu|c_0/c_1|)$ rather than a direct solve, and so is the
+approach to $1/4\pi$ in the inset.}
+\label{fig:approach}
+\end{figure}

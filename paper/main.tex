@@ -1,0 +1,83 @@
+% A critical coupling for the magnetic instability of holographic SU(2) plasmas
+%
+% JHEP format. Build from this directory with
+%     bash build.sh
+% (pdflatex + bibtex + pdflatex x2). The bibliography is
+% ../references.bib; figures are read from ../backreaction/figures.
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{jheppub}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array}
+
+\graphicspath{{../backreaction/figures/}}
+
+% ---------------------------------------------------------------- macros
+\newcommand{\coderepo}{\url{https://github.com/migaelstrydom/holographic-vortex-critical-coupling}}
+\newcommand{\AdS}{\mathrm{AdS}}
+\newcommand{\astar}{\alpha_\star}
+
+% ---------------------------------------------------------------- front matter
+\title{A critical coupling for the magnetic instability of holographic $SU(2)$ plasmas}
+
+\author{Migael Strydom}
+\hypersetup{pdftitle={A critical coupling for the magnetic instability of holographic SU(2) plasmas},pdfauthor={Migael Strydom}}
+\affiliation{Independent researcher, Cambridge, United Kingdom}
+\emailAdd{migael@strydom.me.uk}
+
+\abstract{\input{abstract}}
+
+% \emergencystretch: the JHEP style sets the keywords with strict tolerance, and this
+% string is a centimetre too long for one line, so it would run into the margin.
+\keywords{\emergencystretch 3em AdS-CFT Correspondence, Holography and Condensed Matter Physics (AdS/CMT)}
+
+\begin{document}
+\maketitle
+
+\input{sections/01-introduction}
+\input{sections/02-setup}
+\input{sections/03-onset}
+\input{sections/04-critical-coupling}
+\input{sections/05-lattice}
+\input{sections/06-open-questions}
+
+\acknowledgments
+
+This work returns to an open question from the author's doctoral
+research~\cite{Strydom:2014mfo},
+carried out at the Max-Planck-Institut f\"ur Physik (Werner-Heisenberg-Institut),
+F\"ohringer Ring 6, 80805 M\"unchen, Germany, for a doctorate from the
+Ludwig-Maximilians-Universit\"at M\"unchen. The author thanks his former
+collaborators Yan-Yan Bu, Johanna Erdmenger, Jonathan P. Shock, Stephan
+Steinfurt and Hansj\"org Zeller.
+
+The derivations, numerical code, symbolic checks, figures and text of this
+paper were developed together with Claude, Anthropic's AI model (Claude
+Fable 5, Fable 5.1 and Opus 5.5), which carried out the calculations, wrote
+and ran the scripts that produce every number and figure, and drafted and
+formatted the manuscript under the author's direction. Each result was
+checked by independent methods: symbolic verification of the analytic
+steps, and for each computed number a second, independent computation,
+with either a different method or a different discretisation of the same
+equations. The code
+and its test suite are public. The author reviewed the derivations and the
+text and checked the references, and takes responsibility for the whole.
+
+\paragraph{Data and code availability.} The code that produces every
+number and figure in this paper, the cached numerical data it reads, and a
+test suite that checks the published values against the code are available
+at \coderepo. A single script there regenerates all results from scratch.
+
+\appendix
+\input{appendices/A-dictionary}
+\input{appendices/B-charged-sector}
+\input{appendices/C-response-system}
+\input{appendices/D-numerics}
+\input{appendices/E-probe-theorem}
+
+\bibliographystyle{JHEP}
+\bibliography{../references}
+
+\end{document}

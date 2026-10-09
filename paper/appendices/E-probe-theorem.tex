@@ -1,0 +1,161 @@
+\section{Triangular selection in the probe limit}
+\label{app:probe}
+
+We prove the statement used in section~\ref{sec:5.2}: in the probe limit,
+near the onset, the triangular lattice is the global minimum of the quartic
+free energy over all one-flux-quantum Bravais lattices. Once the kernel is
+shown to be completely monotone this is a corollary of Montgomery's
+theorem; what is specific to holography is the Stieltjes representation of
+the kernel below. The question was left open
+in~\cite{Bu:2012mq}, which compared rhombic candidates numerically.
+
+\subsection{The reduced free energy}
+\label{app:probe-free-energy}
+
+On $\mathrm{AdS}_5$--Schwarzschild in the
+coordinate $u = 1/r$, with $f = 1 - u^4$ and $u_H = 1$, the static planar
+ansatz $W_x = \eta\,w_0(u)\psi(x,y)$, $W_y = -iW_x$,
+$A^3 = (Bx + \eta^2 a_y)\,dy + \eta^2 a_x\,dx$ in the gauge
+$W_u = 0$ reduces the Yang--Mills free energy density exactly, to all orders
+in the fields, to
+\begin{equation}
+\mathcal{F} = \frac{1}{2u}\Big[|F^W_{xy}|^2 + \big(B + \hat b + \mathrm{Im}(\bar W_xW_y)\big)^2\Big] +
+\frac{f}{2u}\Big[|W_x'|^2 + |W_y'|^2 + a_x'^2 + a_y'^2\Big]~,
+\end{equation}
+with $\hat b = \partial_xa_y - \partial_ya_x$ the induced field and $F^W_{xy} = D_xW_y - D_yW_x$
+covariant under the full $A^3$. Two facts make this tractable. On the
+polarised lowest Landau level $F^W_{xy}$ vanishes at $a = 0$ and is
+$O(\eta^3)$ with the induced field, so the condensate pays a gradient
+cost in $u$ only; and $\mathrm{Im}(\bar W_xW_y) = -|W_x|^2$, so the
+condensate is diamagnetic at contact level and the local field is
+$B + \eta^2(\hat b - w_0^2|\psi|^2)$. The $u$-components of the Yang--Mills
+equations close on the ansatz. The expansion in $\eta$ then has no odd
+terms. Its quadratic term is the Sturm--Liouville form of
+section~\ref{sec:3} and is exactly linear in $B$ at fixed $w_0$,
+$F_2 = -\eta^2(B - B_c)J_2$ with $J_2 = \int w_0^2\,du/u = 1$, and its
+quartic term is
+\begin{equation}
+\mathcal{F}_4 = \frac{\big(\hat b - w_0^2|\psi|^2\big)^2}{2u} + \frac{f}{2u}\big(a_x'^2 + a_y'^2\big)~.
+\end{equation}
+Expanding $|\psi|^2 = \sum_G\omega_Ge^{iG\cdot x}$ on the reciprocal
+lattice, each harmonic decouples. The induced field at harmonic $G$ obeys
+$-(f\hat b_G'/u)' + (G^2/u)\,\hat b_G = (G^2/u)\,\omega_Gw_0^2$ with $\hat b_G(0) = 0$ and
+regularity at the horizon, and the on-shell exchange energy is minus half
+the source coupling. This is the abelian sector of appendix~\ref{app:response-abelian} with
+$p_1 = 1/u$ and $p_2 = f/u$, and it gives the probe kernel
+$K(s;0) = C_4 - X(s)$ with $s = G^2$ (in the probe limit the coupled and abelian-only screenings $X$ and $X_{\rm ab}$ of section~\ref{sec:5.1} coincide), $C_4 = \int w_0^4\,du/u$ and
+$X(s) = \int \hat b_G w_0^2\,du/u$ at unit source. The operator $\mathcal{T}$ of
+appendix~\ref{app:response-abelian} is here the onset operator of section~\ref{sec:3} itself, so its
+spectrum is the tower $B_n$ of radial overtones of the linear problem, all in
+the lowest Landau level, and the spectral
+form reads
+\begin{equation}
+C_4 - X(s) = \sum_n c_n^2\,\frac{B_n}{B_n + s}~, \qquad c_n = \langle w_0^2,\varphi_n\rangle~, \qquad \sum_n c_n^2 = C_4~.
+\end{equation}
+Hence $0 < X(s) < C_4$, $X(0) = 0$, $X \to C_4$ as $s \to \infty$, and
+$(-1)^k\,d^k(C_4 - X)/ds^k \ge 0$ for every $k$: the screened repulsion is
+completely monotone. The $G = 0$ harmonic of $\hat b$ vanishes by the Bianchi
+identity at fixed applied field, so $K_{G=0} = C_4$ in the probe limit.
+
+\subsection{The lowest-Landau-level identity}
+\label{app:probe-lll-identity}
+
+For an element of the lowest
+Landau level with one flux quantum per unit cell, $|\omega_G| = e^{-G^2/4B}$
+for every Bravais lattice, which is the origin of the weights
+$e^{-\gamma_G/2}$ in section~\ref{sec:5.1}. This is the classical result of
+the flux-line-lattice literature, stated for general lattice symmetry as
+equation (1.6) of~\cite{Brandt:1995rpp} and equation (B6)
+of~\cite{Brandt:2003prb}, where the coefficients are
+$(-1)^{m+mn+n}e^{-G_{mn}^2 S/8\pi}$ with $S = 2\pi/B$ the cell area. The
+lowest-Landau-level projection of $e^{iG\cdot x}$ carries the Gaussian form
+factor. With one flux quantum per cell the remaining guiding-centre factor
+is a magnetic translation by a lattice vector, of which the state is an
+eigenstate with eigenvalue of unit modulus. The identity reproduces the
+Abrikosov ratios $\beta_\square = 1.1803406$ and
+$\beta_\triangle = 1.1595953$ (the $\beta_A$ of the vortex literature,
+unrelated to our backreaction parameter), and we checked it numerically on
+a generic lattice as well. The quartic functional is therefore the one of section~\ref{sec:5.1} at
+$\beta = 0$,
+\begin{equation}
+F = -\eta^2(B - B_c) + \Big[\tfrac12C_4 + C(\tau)\Big]\eta^4~, \qquad
+C(\tau) = \tfrac12\sum_{G\in\Lambda^*(\tau)\setminus0} e^{-G^2/2B_c}\,\big(C_4 - X(G^2)\big)~,
+\end{equation}
+minimised over the amplitude by $\eta_\star^2 = (B - B_c)/(C_4 + 2C)$
+with $F_{\min} = -(B - B_c)^2/(2C_4 + 4C)$, so the transition is second
+order and the lattice that forms is the one that minimises $C(\tau)$.
+
+\subsection{The proposition}
+\label{app:probe-theorem}
+
+Since $C_4 - X$ is a Stieltjes transform of a positive
+measure, the weighted kernel is a Laplace transform of one,
+\begin{equation}
+k(s) \equiv e^{-s/2B_c}\,\big(C_4 - X(s)\big) = \int_{1/2B_c}^\infty e^{-st}\,d\mu(t)~, \qquad
+d\mu(t) = \sum_n c_n^2B_n\,e^{-B_n(t - 1/2B_c)}\,dt~,
+\end{equation}
+and the lattice-dependent part of the quartic coefficient is a positive
+superposition of Gaussian lattice theta functions,
+\begin{equation}
+C(\tau) = \tfrac12\sum_{G\neq0}k(|G|^2) = \tfrac12\int d\mu(t)\,\big[\Theta_{\Lambda^*}(t) - 1\big]~, \qquad
+\Theta_\Lambda(t) = \sum_{v\in\Lambda}e^{-t|v|^2}~.
+\end{equation}
+Flux quantisation fixes the covolume of $\Lambda^*$ at $2\pi B_c$, so
+$\Lambda^*$ ranges over all two-dimensional lattices of fixed covolume, and
+the triangular lattice is its own dual shape. Montgomery's
+theorem~\cite{Montgomery:1988mt} states that among these the Gaussian theta
+function is minimised, for every $t > 0$, by the triangular lattice alone;
+integrating against the positive measure $\mu$ gives
+$C(\tau) > C(\tau_\triangle)$ for every non-triangular $\tau$. That a
+completely monotone interaction is minimised by the triangular lattice in
+this way was observed by Cohn and Kumar~\cite{Cohn:2007universally} and
+is Proposition 3.1 of~\cite{Betermin:2016theta}; Proposition 3.4 there
+gives a convex decreasing positive interaction for which the square lattice
+has lower energy than the triangular one at some densities, which is why complete monotonicity, and not
+positivity, is the property the argument needs.
+
+The proof used three things only: the identity of appendix~\ref{app:probe-lll-identity}, the positivity and
+self-adjointness of the radial operator, and Montgomery's theorem. The
+numbers $C_4$, $c_n$ and $B_n$, and with them the temperature and the
+blackening function, never entered, so the result holds at every
+temperature near $B_c$ and on any background that preserves the structure
+of the reduced functional. That is why it goes through unchanged for the
+abelian sector on the brane, appendix~\ref{app:response-abelian}, and why it is no longer
+guaranteed once the metric sector enters, section~\ref{sec:5.2}. Its scope is the class of
+Abrikosov's analysis: Bravais lattices with one flux quantum per cell.
+Multi-quantum cells and non-lattice lowest-Landau-level configurations are
+not excluded by it, although the triangular lattice is locally stable
+against all lowest-Landau-level perturbations at one flux quantum
+(section~\ref{sec:5.3}). For the flat-space lowest-Landau-level functional,
+whose Abrikosov ratio is a Gaussian theta function, the same route to the
+triangular lattice is known~\cite{Nier:2007theta,Aftalion:2006lll}, with
+the Abrikosov case proved directly in~\cite{Nonnenmacher:1998chaotic};
+what is new here is that the holographic kernel keeps the structure.
+
+\subsection{Numbers}
+\label{app:probe-numbers}
+
+The values below use $u_H = 1$ and $J_2 = 1$. The brane normalisation
+$\int p_1 w_0^2\,dr = 1$ of section~\ref{sec:5} reduces to $J_2 = 1$ at
+$\beta = 0$ and differs from it by a positive factor at $\beta > 0$, which is
+why the brane results of section~\ref{sec:5.2} are quoted as ratios.
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+quantity & value \\
+\midrule
+$C_4$ & $1.5805931$ \\
+$C(\tau_\triangle)$ & $0.0184443$ \\
+$C(\tau_\square)$ & $0.0229818$ \\
+$(C_\square - C_\triangle)/C_\triangle$ & $+0.2460$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The relative margin $+0.246$ is the probe value against which the brane
+margins of section~\ref{sec:5.2} are compared; it is essentially unchanged by the
+abelian sector of the throat ($+0.250$) and reduced by the metric sector
+($+0.1766$). A grid scan of $C(\tau)$ over the fundamental domain
+up to $\tau_2 = 5$, the $\beta = 0$ row of the moduli scan of
+appendix~\ref{app:numerics-scan}, finds its minimum at the
+triangular point, which checks the proposition for this kernel.

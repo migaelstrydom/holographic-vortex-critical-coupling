@@ -1,0 +1,165 @@
+\section{Introduction}
+\label{sec:1}
+
+A strongly coupled plasma with a non-abelian global symmetry can be
+magnetically unstable. In the simplest holographic model, Einstein--$SU(2)$
+Yang--Mills theory in $\mathrm{AdS}_5$, a magnetic field in the abelian
+direction of the gauge group makes the charged vector bosons tachyonic in
+their lowest Landau level. This is the holographic form of the
+Nielsen--Olesen instability~\cite{Nielsen:1978rm}. In the probe limit, where
+the gauge field does not deform the geometry, the plasma condenses once the
+field exceeds $B_c \simeq 50\,T^2$~\cite{Ammon:2011je}. The condensate
+carries the flux in a lattice of vortices, like the Abrikosov lattice of a
+type II superconductor~\cite{Abrikosov:1956sx,Kleiner:1964zz}, and numerical
+comparisons of candidate lattices found the triangular one
+lowest~\cite{Bu:2012mq}. We show in appendix~\ref{app:probe} that this is a
+theorem: the quartic vortex interaction of the probe theory is completely
+monotone in the momentum transfer, and Montgomery's
+theorem~\cite{Montgomery:1988mt,Cohn:2007universally,Betermin:2016theta}
+then makes the triangular lattice the minimum among all one-flux-quantum
+Bravais lattices.
+
+All of this ignores the gravity of the field itself. The field sources the
+metric with a strength set by the single coupling of the theory,
+$\alpha = \kappa^2/\hat g^2$, and enters the geometry through
+$\beta = \alpha B^2$. Since $B_c \simeq 5$ in horizon units, $\beta$ is of
+order one already at couplings of a few percent: $\beta = 1$ at the onset
+when $\alpha = 0.028$. This paper asks what happens once the field bends
+the geometry. The answer is that gravity can remove the linear instability
+altogether.
+
+The calculation is exact in the coupling and expands only in the
+condensate, which is small near the onset. This is possible because the
+condensate-free background at any $\beta$ is known: it is the magnetic
+brane of D'Hoker and Kraus~\cite{DHoker:2009mmn,DHoker:2009ixq}. The onset
+becomes a Sturm--Liouville problem on the brane, and the quartic term a
+boundary value problem for the brane's linear response.
+
+The central result is that the critical field rises with the coupling and
+diverges at
+\begin{equation}
+\alpha_\star = \tfrac23~,
+\end{equation}
+above which the normal phase of the magnetised plasma has no linear
+instability in the charged sector, at any field or temperature. The reason
+is simple. At zero temperature the interior of the brane is an
+$\mathrm{AdS}_3 \times \mathbb{R}^2$ throat in which the flux plane
+stretches in proportion to $B$~\cite{DHoker:2009mmn}. The field measured
+in throat units, and with it the tachyonic mass of the lowest Landau level,
+is therefore a number fixed by $\alpha$, and the onset condition becomes
+the Breitenlohner--Freedman
+bound~\cite{Breitenlohner:1982bm,Breitenlohner:1982jf} of the
+$\mathrm{AdS}_3$ factor. The
+tachyon violates it exactly when $\alpha < 2/3$.
+
+Violating the bound is sufficient for the instability; a node count
+shows that here it is also necessary, and a positivity argument extends
+the result to the whole charged sector. At finite temperature we establish the result
+numerically. In $d + 1$ bulk dimensions the bound is
+$\alpha_\star(d) = 16/(d(d-1)(d-2))$, and it is the critical coupling for
+$d = 4, 5, 6$. Since $\alpha$ is proportional to the ratio of the current
+and stress-tensor central charges of the boundary theory, the criterion can
+be stated in boundary terms: for $d = 4, 5, 6$ a magnetised plasma with an
+Einstein--Yang--Mills dual has a charged instability at zero temperature
+if and only if
+\begin{equation}
+\frac{C_J}{C_T} < \frac{8}{d^2(d+1)}~,
+\end{equation}
+which in four dimensions says that the current carries less than one tenth
+of the stress-tensor central charge. The onset temperature vanishes at
+$\alpha_\star$ with an essential singularity of
+Berezinskii--Kosterlitz--Thouless type, whose coefficient we derive, though it sets in only at extremely low
+temperatures.
+
+Below $\alpha_\star$ gravity adds an attractive channel to the interaction
+between vortices: the exchange of the plasma's stress tensor between
+density modulations of the condensate. The attraction barely changes the
+shape of the lattice, but it decides its stability. At
+\begin{equation}
+\alpha_L = 0.372
+\end{equation}
+the quartic coefficient of the uniform lattice changes sign, the triangular
+lattice becomes unstable to long-wavelength density modulation, and the
+transition at $B_c$ turns first order, so $\alpha_L$ is a tricritical
+point. The plasma thus passes through three
+regimes (figure~\ref{fig:1}): a vortex crystal below $\alpha_L$, a
+first-order regime up to $\alpha_\star$, in which $B_c$ is only a spinodal,
+and no charged instability beyond. Whether a condensed phase survives above
+$\alpha_\star$, reached by a first-order jump, is the main question we
+leave open.
+
+\begin{figure}[t]
+\centering
+\includegraphics{poster_bc_alpha}
+\caption{The critical field $B_c(\alpha)$ at fixed temperature, on a
+logarithmic axis: the collocation ladder (circles) and, beyond its top rung
+at $\alpha = 0.591$, direct solves by shooting from the horizon (grey). The
+curve rises convexly and has a vertical asymptote at the critical coupling
+$\astar = 2/3$. The uniform vortex crystal forms in a second-order
+transition for $\alpha < \alpha_L$; for $\alpha_L < \alpha < \astar$ the
+transition is first order and $B_c$ is a spinodal; for $\alpha > \astar$
+the normal phase has no linear charged instability. The right axis reads
+the same curve as the onset temperature at fixed field,
+$T_c/\sqrt B = 1/(\pi\sqrt{B_c u_H^2})$, which falls from $0.141$ in the
+probe limit to zero at $\astar$.}
+\label{fig:1}
+\end{figure}
+
+Einstein--$SU(2)$ Yang--Mills holography goes back
+to~\cite{Gubser:2008zu,Gubser:2008wv}, where a chemical potential drives a
+$p$-wave condensate; in the backreacted model of~\cite{Gubser:2008zu} the
+critical temperature was found numerically to vanish at a critical
+coupling. The magnetic brane and its throat are due to D'Hoker and
+Kraus~\cite{DHoker:2009mmn,DHoker:2012rlj}, who computed its correlators
+with Shah~\cite{DHoker:2010xwl} and also found a
+quantum critical point on the charged brane, tuned by field over charge
+density at fixed Chern--Simons coupling~\cite{DHoker:2010zpp,DHoker:2010onp}.
+The stability of the throat within $D = 5$ $SO(6)$ gauged supergravity,
+which uplifts to type IIB on $S^5$, was examined
+in~\cite{Almuhairi:2010rb,Almuhairi:2011ws,Donos:2011pn}. For the
+equal-charge embedding of D'Hoker and Kraus the scalars of the truncation
+are stable~\cite{Almuhairi:2010rb}, but the $SO(6)$ $W$ bosons have a
+Nielsen--Olesen mode that violates the $\mathrm{AdS}_3$
+bound~\cite{Donos:2011pn},\footnote{The mode was first found in v1
+of~\cite{Almuhairi:2011ws}.} and, including their mixing with
+the charged scalars, \cite{Donos:2011pn} mapped the unstable embeddings and
+found only a narrow window of non-supersymmetric throats with no known
+instability next to the supersymmetric ones. In all of these
+the coupling is fixed by supergravity and the $U(1)$ embedding is the
+parameter. Here the embedding is fixed and the coupling is the parameter,
+which is what produces a critical value. In $d = 3$,
+\cite{Wong:2013rda} derived the corresponding bound on the magnetic
+$\mathrm{AdS}_4$ brane, which our general-$d$ formula reproduces, computed
+the onset at finite coupling and temperature, and studied the lattice in
+the probe limit. In $d = 3$ we find that the bound is not the critical
+coupling (section~\ref{sec:4.3}): a bound state outside the $\mathrm{AdS}_2$
+throat keeps the plasma unstable up to $\alpha = 3.037$ rather than $8/3$.
+
+Backreacted vortex lattices of abelian condensates have been constructed
+near onset~\cite{Bao:2013fda}, in a circular-cell
+approximation~\cite{Tallarita:2019amp} and in full~\cite{Donos:2020viz},
+which finds the triangular lattice preferred; the onset on a backreacted magnetic brane
+has been studied for an abelian $s$-wave condensate~\cite{Chernicoff:2024ymn},
+and a single backreacted vortex with non-abelian orientational moduli was
+constructed in~\cite{Tallarita:2019czh}. With an adjoint Higgs field the
+$SU(2)$ theory on the magnetic $\mathrm{AdS}_4$ brane instead forms a
+monopole wall through a first-order transition~\cite{Bolognesi:2010nb}. The
+flat-space vortex lattices of the gluon~\cite{Ambjorn:1980ms} and
+electroweak $W$~\cite{Ambjorn:1988fx,Ambjorn:1988tm}, and the proposed
+$\rho$-meson condensate of QCD~\cite{Chernodub:2010qx,Adhikari:2024bfa},
+are the same mechanism without gravity; with gravity, the same instability
+appears near the horizon of a magnetically charged black
+hole~\cite{Lee:1991qs,Maldacena:2020skw}. The $\rho$-meson onset has also
+been found holographically in the Sakai--Sugimoto
+model~\cite{Callebaut:2011ab,Callebaut:2013wba}. Earlier holographic vortex lattices in the probe
+limit are~\cite{Maeda:2009vf,Murray:2011gr}. The holographic
+Berezinskii--Kosterlitz--Thouless scaling we find is that
+of~\cite{Kaplan:2009kr,Jensen:2010ga,Iqbal:2010eh}, with a bulk coupling
+tuned through the bound rather than a filling fraction, an
+operator dimension, a field~\cite{Faulkner:2010gj} or a flavour
+number~\cite{Alho:2013dka}.
+
+Section~\ref{sec:2} sets up the theory and the expansion,
+section~\ref{sec:3} gives the onset curve $B_c(\alpha)$,
+section~\ref{sec:4} derives the critical coupling, and section~\ref{sec:5}
+treats the lattice. Section~\ref{sec:6} lists open questions.

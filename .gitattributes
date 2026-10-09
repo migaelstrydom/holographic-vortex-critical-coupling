@@ -1,0 +1,4 @@
+# Byte-exact files: the generated systems are pinned by content_sha256 over
+# their raw bytes (backreaction/generated.py), so no end-of-line conversion.
+backreaction/systems/*.py -text
+*.npz binary

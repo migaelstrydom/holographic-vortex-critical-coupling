@@ -1,0 +1,86 @@
+\section{The critical field rises convexly with the coupling}
+\label{sec:3}
+
+\subsection{The onset is a Sturm--Liouville problem on the brane}
+\label{sec:3.1}
+
+In the probe limit the instability is the one of Nielsen and Olesen: the
+charged combination $W = A^1 + iA^2$ of the gauge field is a vector boson of
+gyromagnetic ratio $g = 2$, and in the lowest Landau level its
+magnetic-moment coupling to the background field is strong enough to make it
+tachyonic. As shown in~\cite{Ammon:2011je}, the mode that condenses first is
+the polarised lowest Landau level
+\begin{equation}
+W_x = w(r)\,\psi_0(x,y)~, \qquad W_y = -i\,W_x~,
+\end{equation}
+where $\psi_0$ is any function in the lowest Landau level of the charge-one
+field $A^3 = Bx\,dy$, and $w(r)$ is the radial profile. In the boundary
+theory what condenses is the charged spatial current
+$\langle J^1_i \pm iJ^2_i\rangle$, modulated in the plane. The same
+instability for a charged vector of general mass and gyromagnetic ratio,
+which reduces to the $SU(2)$ case at zero mass and $g = 2$, was studied in
+the probe limit in~\cite{Cai:2013pda,Cai:2013kaa}. In the gauge $W_r = 0$,
+$W_t$ and $W_z$ vanish identically for this mode, and on the magnetic brane
+the same ansatz reduces the linearised Yang--Mills equations exactly to a
+Sturm--Liouville problem in $r$ with the field as the eigenvalue,
+\begin{equation}
+\big(P\,w'\big)' + Q\,w = 0~, \qquad P = U\,e^{Z}~, \qquad Q = B\,e^{Z-2V}~.
+\end{equation}
+One feature of this equation matters for what follows. On the polarised lowest Landau level
+the transverse kinetic term of $W$ vanishes identically, since
+$F^W_{xy} = 0$ for this polarisation, so the only term without a radial
+derivative is the non-abelian magnetic-moment coupling. This is the $g = 2$
+mechanism, and it carries a single factor $e^{-2V}$: the moment term samples
+the warping of the flux plane and nothing else, which is what makes the
+field drop out in the throat (section~\ref{sec:4.2}). The onset is
+determined by this one equation on the full brane (the truncation is
+consistent: at linear order in $w$ nothing sources the metric, the abelian
+field $A^3$ or the other colour components;
+appendix~\ref{app:charged-zero-mode}). In the probe limit $\beta \to 0$ the equation
+reduces to the probe problem, $P \to f/u$ and $Q \to B/u$ in the coordinate
+$u = 1/r$, with $f = 1 - u^4$ the blackening factor of
+$\mathrm{AdS}_5$--Schwarzschild, and the same critical field $B_c u_H^2 = 5.13126764$.
+
+The boundary conditions are those of the probe calculation, regularity at
+the horizon and no source at the boundary, and the brane's logarithmic
+asymptotics do not obstruct them (appendix~\ref{app:charged-zero-mode}).
+Since $\psi_0$ is
+arbitrary within the lowest Landau level, the onset is infinitely
+degenerate, and the lattice is selected only at quartic order, which is the
+subject of section~\ref{sec:5}.
+
+\subsection{The onset curve is a single sweep in \texorpdfstring{$\beta$}{beta}}
+\label{sec:3.2}
+
+At fixed $\alpha$ the critical field is the smallest eigenvalue $B$ of the
+Sturm--Liouville problem on the brane at the same $B$. This looks like a
+self-consistency problem, but it needs no iteration: the background depends
+on $\alpha$ and $B$ only through $\beta$, and at fixed $\beta$, $B$ enters
+the operator only as the eigenvalue. We therefore construct the brane at a given
+$\beta$, solve for its lowest
+eigenvalue $B_{\rm eig}(\beta)$, and read off the coupling at which this
+brane is the self-consistent onset,
+\begin{equation}
+B_c = B_{\rm eig}(\beta)~, \qquad \alpha(\beta) = \frac{\beta}{B_{\rm eig}(\beta)^2}~.
+\end{equation}
+
+\subsection{Backreaction stabilises the normal phase without saturating}
+\label{sec:3.3}
+
+The critical field at fixed temperature is shown in figure~\ref{fig:1}, in
+units of the horizon radius, that is $B_c/T^2 = \pi^2 B_c u_H^2$. We solved
+the sweep on a dense grid in $\beta$ up to $\beta = 45$, where
+$\alpha = 0.1745$ and $B_c u_H^2 = 16.06$, and on a sparse sequence of 23
+values from $\beta = 1$ to $10^{11}$, which we call the ladder and its
+members rungs; the rungs beyond $\beta = 45$ are used for the approach
+to $\alpha_\star$ in section~\ref{sec:4.6}. The curve is
+monotone and convex, and its tangent at $\alpha = 0$ is already ten percent
+off at $\alpha \approx 0.08$. Backreaction thus stabilises the normal phase: at a
+given temperature the magnetised plasma needs a larger field to condense
+when the field is allowed to deform the geometry, and the effect grows
+faster than linearly. That backreaction works against the instability, and
+removes it at zero temperature beyond a critical coupling, was found
+in~\cite{Wong:2013rda} in four bulk dimensions; the exact curve shows how
+$B_c$ diverges on the approach to $\alpha_\star$. Along the ladder $B_c$ rises by more than three orders
+of magnitude while $\alpha$ moves from $0.4$ to $0.59$,
+which is the first sign that the curve has a vertical asymptote.

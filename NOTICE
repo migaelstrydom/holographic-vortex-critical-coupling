@@ -1,0 +1,12 @@
+Licensing of this repository
+
+The source code is licensed under the MIT License (LICENSE): everything except
+the files listed below.
+
+The paper (paper/, except the two class files below), the bibliography
+(references.bib), the figures (backreaction/figures/) and README.md are
+licensed under Creative Commons Attribution 4.0 International (LICENSE-docs).
+
+paper/jheppub.sty and paper/JHEP.bst are the JHEP class files, copyright SISSA
+Medialab, distributed under the LaTeX Project Public License (see their
+headers). They are covered by neither of the licences above.

@@ -1,0 +1,333 @@
+\section{The response system and the quartic kernel}
+\label{app:response}
+
+\subsection{The condensate as a source}
+\label{app:response-source}
+
+Just above the onset, $W_x = \eta\,
+w_0(r)\,\psi(x,y)$ with $W_y = -iW_x$, and $|\psi|^2 = \sum_G \omega_G\,
+e^{iG\cdot x}$ with $\omega_G = (-1)^{m+n+mn}e^{-\gamma_G/4}$ on the reciprocal
+lattice, $G = G_{mn}$, so that the quartic free energy carries the weights
+$|\omega_G|^2 = e^{-\gamma_G/2}$.
+At second order in $\eta$ the condensate sources the abelian field and
+the metric at each $G$, through the current $\epsilon^{3bc}W^b\,DW^c$ and the
+stress tensor of $W$ evaluated on the zero mode. Both close on
+$|\psi|^2$ alone, so the response to the harmonic $\eta^2\omega_G\,e^{iGx}$, which we take along $x$, is
+\begin{equation}
+\begin{split}
+h_{MN}\,dx^Mdx^N &= \eta^2\omega_G\,e^{iGx}\Big[-U H_{tt}\,dt^2 + e^{2V}\big(H_{xx}\,dx^2 + H_{yy}\,dy^2\big) + e^{2Z}H_{zz}\,dz^2 \\
+&\qquad\qquad\qquad + \frac{H_{rr}}{U}\,dr^2 + 2ie^{2V}H_{xr}\,dx\,dr\Big]~, \\
+\delta A^3 &= \eta^2\omega_G\,e^{iGx}\,a_y\,dy~, \qquad \hat b = iG\,a_y~,
+\end{split}
+\end{equation}
+with $\hat b$ the induced field strength. Per unit $\eta^2\omega_G e^{iGx}$
+the stress tensor of $W$, in the normalisation of the Einstein equations
+$G_{MN} - 6g_{MN} = \alpha\,(F_{MP}F_N{}^P - \tfrac14 g_{MN}F^2)$, is diagonal,
+%% check: source
+\begin{equation}
+\begin{split}
+&S_{tt} = Ue^{-4V}\big(Ue^{2V}w_0'^2 - Bw_0^2\big)~, \qquad
+S_{xx} = S_{yy} = -Be^{-2V}w_0^2~, \qquad \\
+&S_{zz} = e^{2Z-4V}\big(Bw_0^2 - Ue^{2V}w_0'^2\big)~, \qquad
+S_{rr} = \frac{e^{-4V}}{U}\big(Bw_0^2 + Ue^{2V}w_0'^2\big)~,
+\end{split}
+\end{equation}
+and it is conserved on the zero-mode equation, $\nabla^M S_{MN} = 0$ up to
+the Lorentz force on the condensate current, whose source for $\hat b$ is
+$s\,p_1w_0^2$, $s = G^2$. Since the background depends on $r$ only, the response at
+wavenumber $G$ is a radial boundary value problem in which $G$ enters
+through $s$ alone, and the quartic free energy is the on-shell action of the
+response paired against its own source.
+
+\subsection{The abelian sector}
+\label{app:response-abelian}
+
+With $p_1 = e^{Z-2V}$ and $p_2 = Ue^Z$, the
+induced abelian field $\hat b$ at harmonic $s$ obeys, with the metric frozen,
+\begin{equation}
+\big(p_2\,\hat b'\big)' = s\,p_1\big(\hat b - w_0^2\big)~,
+\end{equation}
+regular at the horizon and vanishing at the boundary, and
+$X_{\rm ab}(s) = \int p_1 w_0^2\,\hat b\,dr$. Writing $\mathcal{A} = -\tfrac{d}{dr}p_2\tfrac{d}{dr}
+\ge 0$, $\mathcal{M} = p_1$, $\mathcal{T} = \mathcal{M}^{-1/2}\mathcal{A}\mathcal{M}^{-1/2}$ and $\mathbf{u} = \mathcal{M}^{1/2}w_0^2$, this is
+$(C_4 - X_{\rm ab})(s) = \langle \mathbf{u}, \mathcal{T}(\mathcal{T}+s)^{-1}\mathbf{u}\rangle$, a Stieltjes transform of a
+positive measure, hence completely monotone in $s$ on every brane. The
+identity $\tfrac{d}{dr}\big[p_2 w^3 w'\big] = 3p_2 w^2 w'^2 - Bp_1 w^4$ on
+solutions of the zero-mode equation, whose endpoint terms vanish, gives
+$\langle \mathbf{u}, \mathcal{T}\mathbf{u}\rangle = \int p_2\big((w_0^2)'\big)^2 dr = \tfrac43 B_c C_4$
+and hence the tail $(C_4 - X_{\rm ab})(s) = \tfrac43 B_c C_4/s + O(s^{-2})$
+on every brane.
+
+\subsection{The coupled metric and photon response}
+\label{app:response-metric}
+
+The classifying symmetry of the
+linearised system is $y$-parity combined with the flip of the $U(1)$ charge,
+since the background $F_{xy}$ is odd under $y$-parity alone. Under it $a_y$
+is even and $a_x$, $a_r$ are odd and unsourced. The diffeomorphisms
+$\xi = (\xi^x, \xi^r)\,e^{iGx}$ of the even sector shift $H_{tt}$ by a
+multiple of $\xi^r$ and $H_{xx}$ by multiples of $\xi^x$ and $\xi^r$, with
+no derivatives, so the algebraic gauge $H_{tt} = H_{xx} = 0$ can be reached
+pointwise. The linearised equations are
+$\delta(G_{MN} - 6g_{MN}) - \alpha\,\delta T_{MN} = \alpha S_{MN}$, with
+$\delta T$ the variation of the abelian stress in both the metric and the
+field, and the $y$ component of the linearised Maxwell equation sourced by
+$J$. Using the background constraint
+$U'(2V' + Z') + 2UV'(V' + 2Z') = 12 - \alpha B^2e^{-4V}$ to simplify the
+coefficients, the $(rr)$ and $(xr)$ components are first order,
+%% check: rr
+\begin{equation}
+\begin{split}
+&\big(\tfrac12\alpha B^2e^{-4V} - 6\big)H_{rr} + \tfrac12 G\,(U' + 2UV' + 2UZ')\,H_{xr}
++ \tfrac14(U' + 2UV' + 2UZ')\,H_{yy}' \\
+&\quad + \tfrac14(U' + 4UV')\,H_{zz}' - \tfrac12\big(\alpha B^2e^{-4V} + G^2e^{-2V}\big)H_{yy} - \tfrac12 G^2e^{-2V}H_{zz} \\
+&\quad + \alpha Be^{-4V}\,\hat b = \alpha e^{-4V}\big(Bw_0^2 + Ue^{2V}w_0'^2\big)~,
+\end{split}
+\end{equation}
+%% check: xr
+\begin{equation}
+\begin{split}
+&\tfrac14 G^2(U' + 2UV' + 2UZ')\,H_{rr} + \alpha B^2 G\,Ue^{-2V}H_{xr}
+- \tfrac12 G^2U\big(H_{yy}' + H_{zz}'\big) \\
+&\quad + \tfrac12 G^2U(V' - Z')\,H_{zz} + \alpha BUe^{-2V}\,\hat b' = 0~,
+\end{split}
+\end{equation}
+the $(yy)$ and $(zz)$ components are second order,
+%% check: yy
+\begin{equation}
+\begin{split}
+&\tfrac12 U H_{zz}'' + \tfrac12(U' + UV' + 2UZ')\,H_{zz}' - \tfrac12 G^2e^{-2V}H_{zz}
++ \tfrac12\alpha B^2e^{-4V}H_{yy} + GUH_{xr}' \\
+&\quad + G(U' + 2UV' + UZ')\,H_{xr} - \tfrac14(U' + 2UV' + 2UZ')\,H_{rr}' \\
+&\quad - \tfrac12\big(G^2e^{-2V} + \alpha B^2e^{-4V} + 12\big)H_{rr}
+- \alpha Be^{-4V}\,\hat b = -\alpha Be^{-4V}w_0^2~,
+\end{split}
+\end{equation}
+%% check: zz
+\begin{equation}
+\begin{split}
+&\tfrac12 U H_{yy}'' + \tfrac12(U' + 3UV')\,H_{yy}' - \tfrac12\big(\alpha B^2e^{-4V} + G^2e^{-2V}\big)H_{yy}
++ GUH_{xr}' \\
+&\quad + G(U' + 3UV')\,H_{xr} - \tfrac14(U' + 4UV')\,H_{rr}' + \tfrac12\big(\alpha B^2e^{-4V} - G^2e^{-2V} - 12\big)H_{rr} \\
+&\quad + \alpha Be^{-4V}\,\hat b = \alpha e^{-4V}\big(Bw_0^2 - Ue^{2V}w_0'^2\big)~,
+\end{split}
+\end{equation}
+and the Maxwell equation is
+%% check: My
+\begin{equation}
+\big(p_2\,\hat b'\big)' - s\,p_1\big(\hat b - w_0^2\big) + BG\big(p_2 H_{xr}\big)'
++ \tfrac12 sBp_1\big(H_{yy} - H_{zz} - H_{rr}\big) = 0~,
+\end{equation}
+which with the metric perturbation switched off is the abelian equation of appendix~\ref{app:response-abelian}.
+These five rows, with the derivatives of the two first-order ones, form a
+linear system for $(H_{rr}, H_{xr}, H_{rr}', H_{xr}', H_{yy}'', H_{zz}'', \hat b'')$
+that is non-singular on the brane. The even sector therefore closes on the
+three evolution fields $(H_{yy}, H_{zz}, \hat b)$, with $H_{rr}$ and $H_{xr}$
+fixed algebraically; the $(tt)$ and $(xx)$ equations then vanish identically
+on the solved forms, as the linearised Bianchi identity and source
+conservation require. Regularity at the horizon fixes the slope of
+each evolution field in terms of its value, and the regular solutions have
+$H_{rr}(r_p) = 0$, so that $h_{rr} = H_{rr}/U$ is regular and the
+temperature is not modulated. The boundary indicial exponents are
+$\{0, 4\}$ for the metric fields and $\{0, 2\}$ for $\hat b$; the
+normalisable solution is the one with the three leading coefficients zero,
+and then $H_{yy}, H_{zz}, H_{rr} = O(r^{-4})$, $H_{xr} = O(r^{-5})$ and
+$\hat b = O(r^{-2})$. At $\beta = 0$ the $(H_{yy}, H_{zz})$ block reduces to
+the probe graviton system and the Maxwell row to the abelian equation.
+
+\paragraph{The pairing.} Let $\mathcal{L}_q$ be the part of
+$\sqrt{-g}\,\big(R + 12 - \tfrac{\alpha}{2}F^2\big)$ quadratic in the
+response $(h, a_y)$ (the harmonic times its conjugate, averaged over
+the cell), and add the couplings to the condensate,
+\begin{equation}
+\mathcal{L}_2 = \mathcal{L}_q + \alpha\sqrt{-g}\,S^{MN}\big(h_{MN} + \bar h_{MN}\big)
++ 2\alpha\,p_1w_0^2\big(\hat b + \bar{\hat b}\big)~,
+\end{equation}
+with indices raised by the background metric and $h_{MN}$ stripped of
+$\eta^2\omega_Ge^{iGx}$. The coefficients of the two source terms are not
+chosen: they are the unique ones for which the Euler--Lagrange equations of
+$\mathcal{L}_2$ are the five rows above, with a single overall factor
+$-\sqrt{-g}$ on the Einstein rows and $-2\alpha$ on the Maxwell row.
+Since $\mathcal{L}_q$ is a homogeneous quadratic form, Euler's theorem gives
+$\sum_\phi \phi\,\mathrm{EL}_\phi(\mathcal{L}_q) = 2\mathcal{L}_q - \mathcal{Q}'$, the sum running over the fields and their conjugates, with
+\begin{equation}
+\mathcal{Q} = \sum_\phi\Big[\phi\Big(\frac{\partial\mathcal{L}_q}{\partial\phi'}
+- \Big(\frac{\partial\mathcal{L}_q}{\partial\phi''}\Big)'\Big)
++ \phi'\,\frac{\partial\mathcal{L}_q}{\partial\phi''}\Big]~,
+\end{equation}
+so that on shell $\mathcal{L}_2$ is half its source terms plus
+$\tfrac12\mathcal{Q}'$. The flux vanishes at both ends. At the horizon every
+term of $\mathcal{Q}$ carries a factor $U$ except
+%% check: Qhor
+\begin{equation}
+\begin{split}
+\mathcal{Q}(r_p) = -\tfrac32\,U'e^{2V+Z}\Big[&H_{rr}\bar H_{rr} - \tfrac16 H_{rr}\big(\bar H_{yy} + \bar H_{zz}\big) \\
+&- \tfrac16\bar H_{rr}\big(H_{yy} + H_{zz}\big)\Big]~,
+\end{split}
+\end{equation}
+which vanishes with $H_{rr}(r_p)$; at the boundary it falls off as $r^{-2}$,
+set by the photon. With the fall-offs above every local boundary term
+quadratic in the response, the Gibbons--Hawking term and the holographic
+counterterms including the logarithmic $F^2$ one, vanishes as the cutoff is
+removed, and the horizon is not a boundary, so the quartic free energy is
+the bulk on-shell action alone. In the units of the probe kernel,
+where the $\beta \to 0$ limit is $C_4 - X_{\rm ab}$, the on-shell action is
+multiplied by $-1/2\alpha$, and the source terms give
+\begin{equation}
+K(s;\beta) = C_4 - X(s;\beta) - \tfrac12\,\mathcal{P}(s;\beta)~,
+\end{equation}
+with
+\begin{equation}
+X = \mathrm{Re}\!\int p_1w_0^2\,\hat b\,dr~, \qquad
+\mathcal{P} = \mathrm{Re}\!\int\sqrt{-g}\;S^{MN}\,\bar h_{MN}\,dr~,
+\end{equation}
+where $\hat b$ and $h$ are the coupled solution, including the algebraic
+components, and the contact term $C_4$ is the quartic self-interaction of
+$W$. The weight $\tfrac12$ on $\mathcal{P}$ relative to $X$ is the
+ratio of the two source couplings in $\mathcal{L}_2$, which the field
+equations fix. The difference between $X$ and the abelian-only $X_{\rm ab}$
+of appendix~\ref{app:response-abelian} is the part of the photon response
+induced through the metric, and it is $X_{\rm ab}$ that carries the spectral
+representation and the tail identity.
+
+\paragraph{The weight $\tfrac12$.} The weight has the familiar origin of
+the matter couplings: a stress tensor couples to the metric through
+$\tfrac12\sqrt{-g}\,T^{MN}h_{MN}$, with
+$T^{MN} = (2/\sqrt{-g})\,\delta S/\delta g_{MN} = 2\alpha S^{MN}$ in the
+normalisation above, while a current couples to the gauge field through
+$\sqrt{-g}\,J^Ma_M$ with no such factor. Gauge invariance fixes it
+independently of the action. Under $\xi = (\xi^x, \xi^r)\,e^{iGx}$ the response
+shifts by $h \to h + \mathcal{L}_\xi g$ and $a_y \to a_y + B\xi^x$. For a
+weight $w$ on $\mathcal{P}$, the shift of $X + w\mathcal{P}$ by $\xi^x$ is
+proportional to $w - \tfrac12$ pointwise, because the $(xx)$ component of
+the condensate stress is the magnetic pressure of the current that couples
+to $a_y$. At $w = \tfrac12$ the whole shift is a total derivative,
+%% check: Qxi
+\begin{equation}
+\delta_\xi\Big(X + \tfrac12\mathcal{P}\Big) = \Big[\mathcal{Q}_\xi\Big]_{r_p}^{\infty}~, \qquad
+\mathcal{Q}_\xi = e^{Z-2V}\big(Bw_0^2 + Ue^{2V}w_0'^2\big)\,\mathrm{Re}\,\xi^r~,
+\end{equation}
+which vanishes for every $\xi$ that keeps the horizon in place,
+$\xi^r(r_p) = 0$ as fixed temperature requires, and grows more slowly than
+$r^3$ at the boundary, which includes the boundary Weyl rescalings. The
+kernel is therefore the same in every such gauge. Transforming the solutions to
+radial gauge, $H_{rr} = H_{xr} = 0$, and to a generic smooth gauge confirms
+this (table~\ref{tab:checks}).
+
+Pairing the metric response instead with the full stress, including the
+Maxwell stress $T_{MN}[\hat b_{\rm ab}]$ of the decoupled photon, gives the
+dressed pairing $\mathcal{P}_{\rm dress}$, with
+$X - X_{\rm ab} = \tfrac12\big(\mathcal{P}_{\rm dress} - \mathcal{P}\big)$,
+because the cross term of $\mathcal{L}_q$ between $h$ and $a_y$ is $\alpha$
+times the dressing pairing up to a total derivative. Hence
+$K = C_4 - X_{\rm ab} - \tfrac12\mathcal{P}_{\rm dress}$, a split into
+gauge-invariant parts, which agrees with $K$ only at weight $\tfrac12$.
+
+The uniform response $K_{G=0}$ of section~\ref{sec:5.1} comes from a
+separately derived $G = 0$ system in the gauge $H_{tt} = 0$, as a
+solvability condition: it is the contact term plus the shift of the onset
+eigenvalue by the condensate's own uniform metric response,
+$K_{G=0} = C_4 + \delta B[h_0]$, and the weight $\tfrac12$ there follows
+from the first variation of the coefficients of the zero-mode equation,
+with no action identity. A weight $w$ on $\mathcal{P}$ would move $K_0$ by
+$-1.105\,(w - \tfrac12)\,C_4$ at $\beta = 45$, so the agreement
+$K_{G=0} = K_0$ fixes $w = \tfrac12$ to $10^{-8}$. That
+agreement is not automatic: at small $G$ the gauge $H_{tt} = H_{xx} = 0$
+is reached by a diffeomorphism along $x$ of size $1/G$, which drags the
+photon with it and leaves a finite pure-gauge induced field as $s \to 0$.
+By the gauge invariance above the pairing does not see it, and since the
+boundary metric is held fixed at every $G$, the limit lands on the
+fixed-temperature solution.
+
+\subsection{The throat limit}
+\label{app:response-throat}
+
+In the fixed-temperature frame, $\beta \to \infty$
+takes the interior to $U \to (r - 1)(3r + 1)$, $e^{2Z} \propto (r - \tfrac13)^2$
+and $e^{2V} \to \sqrt{\beta/6}$, that is BTZ with $h = 2/3$, $r_0 = 1/3$. With $\rho = r - r_0$, every ingredient of the kernel is governed
+by the single radial operator
+\begin{equation}
+L_m\,y = \big[\rho(\rho^2 - h^2)\,y'\big]' - m\,\rho\,y~,
+\end{equation}
+which in $\varsigma = h^2/\rho^2$ becomes
+$4\varsigma^2(1-\varsigma)y'' - 4\varsigma^2y' - my = 0$, with exponents
+$\{0, 0\}$ at the horizon and $(1 \mp \mu)/2$ at the top, $\mu = \sqrt{1+m}$,
+and the horizon-regular and normalisable solutions are
+$y_H = \varsigma^a\,{}_2F_1(a, a; 1; 1 - \varsigma)$ and $y_I = \varsigma^a\,{}_2F_1(a, a; 1 + \mu; \varsigma)$,
+with $a = (1+\mu)/2$. The zero mode $L_{-1}w_0 = 0$ is $m = -1$, $\mu = 0$,
+for which the horizon-regular solution is
+$w_0 \propto \tfrac{2}{\pi}\sqrt{\varsigma}\,\mathbf{K}(1 - \varsigma)$, with
+$\mathbf{K}$ the complete elliptic integral of the first kind; its amplitude
+is not normalisable in the throat and cancels from every lattice comparison,
+while the quartic measure $p_1 w_0^4\,dr$ converges at the top of the throat.
+At finite $\beta$ the same formula
+with $a = (1 + i\nu)/2$ supplies the horizon phase $\chi(\nu)$ of section~\ref{sec:4.6}.
+The induced field at harmonic $s$ obeys $L_\lambda\hat b = -\lambda\rho
+w_0^2$ with $\lambda = s\ell_3^2 e^{-2V} = \gamma b$. The abelian throat
+kernel $\mathcal{S}(\gamma) = C_4 - X_{\rm ab}$ is taken in the throat
+normalisation of the zero mode, so that $\mathcal{S}(0)$ is the throat value
+of $C_4$ and $\mathcal{S}/\mathcal{S}(0)$ is the abelian-only ratio
+$(C_4 - X_{\rm ab})/C_4$. It has
+the closed-form endpoints $\mathcal{S}(0) = \tfrac12
+\int_0^1 \mathcal{F}^4 d\varsigma = 1.89804$, $\mathcal{F} = {}_2F_1(\tfrac12, \tfrac12; 1; 1 - \varsigma)$, and
+$\gamma\mathcal{S} \to \tfrac43\mathcal{S}(0)$; its numerical evaluation is
+described in appendix~\ref{app:numerics-scan}.
+
+For the metric sector, on the exact throat the solved equations for
+$H_{yy}''$ and $\hat b''$ of appendix~\ref{app:response-metric} do not
+involve $H_{zz}$ or $H_{zz}'$. With $\Phi = (H_{yy}, \hat b)$ they close on
+the block $[\rho(\rho^2 - h^2)\Phi']' = \rho\,(\mathbb{M}\Phi + \mathbb{S})$
+with the constant matrix
+\begin{equation}
+\mathbb{M}_{11} = \mathbb{M}_{22} = \lambda + \tfrac83~, \qquad
+\mathbb{M}_{12} = -\frac{16}{9bv}~, \qquad \mathbb{M}_{21} = -b\,(G^2 + 4v)~.
+\end{equation}
+Since $G^2/v = 3\lambda$ (from the definition of $\lambda$, with
+$\ell_3^2 = 1/3$), $\mathbb{M}_{12}\mathbb{M}_{21} = \tfrac{16}{9}(3\lambda + 4) > 0$.
+The rescaling $\hat b \to \hat b/\sigma$ with $\sigma = \tfrac34
+bv\sqrt{3\lambda + 4}$ then gives the real symmetric form $(\lambda + \tfrac83)
+\mathbf{1} - \tfrac43\sqrt{3\lambda + 4}\,\sigma_1$, with
+$\lambda$-independent eigenvectors $(1, \mp1)$ and eigenvalues
+\begin{equation}
+m_\pm(\lambda) = \frac{\big(\sqrt{3\lambda + 4} \pm 2\big)^2}{3}~.
+\end{equation}
+Neither reaches the Breitenlohner--Freedman bound at any $\lambda$, while
+$m_- \le \lambda$ for all $\lambda \ge 0$. The component
+$H_{zz}$ is driven by the other fields without feeding back: $z$ lies along
+the $\mathrm{AdS}_3$ factor, where gravity has no propagating mode.
+The full throat kernel is computed from the complete response system of
+appendix~\ref{app:response-metric} on the throat, not from this reduced block, and its
+agreement with the brane ladder is documented in appendix~\ref{app:numerics-scan}.
+
+\subsection{The second variation about the uniform lattice}
+\label{app:response-hessian}
+
+The stability analysis of section~\ref{sec:5.3} needs the second variation
+of the quartic functional about the uniform triangular lattice, over all
+lowest-Landau-level perturbations at one flux quantum per cell. Because the
+unperturbed density is periodic, the Hessian is block diagonal over the
+magnetic Brillouin zone: a perturbation of Bloch momentum $q$ mixes only
+with its partner at $-q$, and the $2\times2$ block has eigenvalues, in
+units $B = 1$,
+\begin{equation}
+\begin{split}
+&E_\pm(q) = \mathcal{D}(q) + \Sigma_0(q) \pm |\Sigma_2(q)|~, \qquad
+\mathcal{D} = \sum_{G\neq0}e^{-G^2/2}K(G^2)\big[\cos(G\wedge q) - 1\big]~,\\
+&\Sigma_0 = \sum_G t_G~,\qquad
+\Sigma_2 = \sum_G t_G\,e^{-iG\wedge q}~, \qquad
+t_G = e^{-|G-q|^2/2}K\big(|G-q|^2\big)~,
+\end{split}
+\end{equation}
+where $G$ runs over the reciprocal lattice and $G \wedge q$ is the
+two-dimensional cross product. Stationarity of the uniform amplitude sets
+$\epsilon = (K_0 + 2C_\triangle)\eta^2$; its $K_0$ part cancels the
+interaction of the perturbation's uniform density with the condensate,
+the only place $K_0$ enters, and its $2C_\triangle$ part is the $-1$ in
+$\mathcal{D}$. As $q \to 0$, $E_-$ is the Goldstone mode of
+translations and rises as $|q|^4$, the soft shear mode of the flat
+lowest-Landau-level lattice~\cite{Eilenberger:1967zz,Rosenstein:2010rmp}, while $E_+ \to 2(K_0 + 2C_\triangle)$,
+twice the inverse compressibility of section~\ref{sec:5.3}. The spectrum
+was evaluated on a dense grid over the zone at fifteen couplings from the
+probe limit to $\alpha = 0.385$, twelve of them below $\alpha_L$, and
+checked against a direct diagonalisation of the Hessian on finite tori
+(table~\ref{tab:checks}).

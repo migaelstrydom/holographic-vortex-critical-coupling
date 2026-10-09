@@ -1,0 +1,134 @@
+\section{The reduction of the charged sector}
+\label{app:charged}
+
+\subsection{The zero mode in general dimension}
+\label{app:charged-zero-mode}
+
+On the diagonal brane
+$ds^2 = -U dt^2 + dr^2/U + e^{2V}(dx^2 + dy^2) + e^{2Z}d\vec z^{\,2}$ in
+$d + 1$ dimensions, with $d - 3$ directions $\vec z$ along the field, the
+Ricci-form equations are $R_{MN} + d\,g_{MN} = \alpha(F^a_{MP}F^{a\phantom{N}P}_N
+- F^2 g_{MN}/2(d-1))$. We write $W = A^1 + iA^2$ and $D = \partial + iA^3$,
+so that on $y$-independent functions the Landau ladder is
+$D_\pm = D_x \pm iD_y = \partial_x \mp Bx$ with
+$D_+\psi_n = -\sqrt B\,\psi_{n+1}$, $D_-\psi_n = 2n\sqrt B\,\psi_{n-1}$ and
+$\psi_n = H_n(\sqrt B x)\,e^{-Bx^2/2}$. For the polarised lowest Landau
+level $W_+ \equiv W_x + iW_y = p_+(r)\psi_0$, $W_- \equiv W_x - iW_y = 0$, $W_r = 0$, the
+linearised Yang--Mills equations reduce, after the $x$ integration is done
+exactly, to
+\begin{equation}
+\big(P w'\big)' + Q w = 0~, \qquad P = U e^{(d-3)Z}~, \qquad Q = B\,e^{(d-3)Z - 2V}~,
+\end{equation}
+with $w = p_+/2$. The transverse Landau term vanishes because
+$F^W_{xy} = \tfrac{i}{2}\big(D_+ W_- - D_- W_+\big)$ has no component in this polarisation, and
+$Q$ is the non-abelian moment term $\epsilon^{abc}F^b_{MN}W^{cM}$ with the
+single warp factor $e^{-2V}$ of the flux plane. At the same order nothing
+sources $A^3$ or the metric, which we verified term by
+term, so the truncation is consistent. Near the boundary the two solutions
+behave as $w = j_0\big(1 + \tfrac{B}{2}r^{-2}\ln r + \ldots\big) + j_1 r^{-2}
++ \ldots$ in $d = 4$, and the source-free condition is $j_0 = 0$. The
+brane's own corrections start at $r^{-3}$ in the fixed-temperature frame,
+where $U = r^2 + 2ar + \ldots$, so they are subleading to both terms, and
+the source can be read off unambiguously as long as the fit or the
+extraction allows for them. At the
+horizon, regularity of the solution with $P \sim U'(r_p)(r - r_p)$ requires
+$w'(r_p) = -Q(r_p)\,w(r_p)/P'(r_p)$.
+
+\subsection{The other channels}
+\label{app:charged-channels}
+
+For the argument of section~\ref{sec:4.5} we keep the
+general static, $z$-independent fluctuation in the gauge $W_r = 0$. Since
+$D_\pm$ shift the Landau index by one and the background depends on $r$
+only, the fluctuations sort by a single integer $n \ge 0$,
+\begin{equation}
+W_+ = p_+(r)\,\psi_n~, \quad W_- = p_-(r)\,\psi_{n-2}~, \quad W_t = a(r)\,\psi_{n-1}~, \quad W_z = c(r)\,\psi_{n-1}~,
+\end{equation}
+with $\psi_{k<0} \equiv 0$. Integrating the quadratic action over $x$ is
+exact at every $n$ and produces no coupling between different $n$. The
+components $W_t$ and $W_z$ decouple from $(p_+, p_-)$ and from each other, each
+with a Sturm--Liouville operator $(P_c a')' - (2n-1)B\zeta_c\,a$ whose
+coefficients $P_c, \zeta_c$ are positive and whose transverse mass
+$(2n-1)B$ is positive for $n \ge 1$. In the convention of appendix~\ref{app:charged-zero-mode}, with
+$P = \sqrt{-g_{tt}g_{zz}/g_{rr}}$, $\zeta = \sqrt{-g_{tt}g_{rr}g_{zz}}/g_{xx}$
+(on the brane $P = p_2$ and $\zeta = p_1 = Q/B$, the weights of
+section~\ref{sec:5}) and $N_k = \int\psi_k^2\,dx$, the remaining density, written as minus the
+energy so that a positive $T_n$ is destabilising, is
+\begin{equation}
+\mathcal{E}_n = -\frac{P}{4}\big(N_n\,p_+'^2 + N_{n-2}\,p_-'^2\big) + T_n(p_+, p_-)~, \qquad
+T_0 = +\frac{B\zeta N_0}{4}\,p_+^2~, \qquad T_1 = 0~,
+\end{equation}
+and, for $n \ge 2$,
+\begin{equation}
+\label{eq:Tn}
+T_{n} = -\frac{B\zeta N_{n-1}}{4}\begin{pmatrix} 2n(n-1) & n \\ n & \dfrac{n}{2(n-1)} \end{pmatrix}~,
+\end{equation}
+which has vanishing determinant and negative trace. There are no cross
+terms between derivatives and undifferentiated fields, and the real and
+imaginary parts of $(p_+, p_-)$ carry identical blocks. The null vector of
+$T_{n\ge2}$, $(p_+, p_-) \propto (-1, 2(n-1))$, is the residual gauge
+transformation $W_M = D_M(\theta\psi_{n-1})$, as the ladder relations
+$D_+\psi_{n-1} = -\sqrt B\psi_n$ and $D_-\psi_{n-1} = 2(n-1)\sqrt B\psi_{n-2}$
+show, and with $W_r$ reinstated the density shifts by a total derivative
+under it, which we used as the check on the reduction. For general $n$ the transverse form follows from the ladder relations
+alone: the transverse energy is $\tfrac12\zeta$ times
+$\tfrac14|D_+W_- - D_-W_+|^2 - \tfrac B2\big(|W_+|^2 - |W_-|^2\big)$, and with $D_+\psi_{n-2} = -\sqrt B\psi_{n-1}$,
+$D_-\psi_n = 2n\sqrt B\psi_{n-1}$ and $N_n = 2nN_{n-1}$ the $x$ integral
+gives $\tfrac{B\zeta N_{n-1}}{4}\big[2n(n-1)p_+^2 + 2np_+p_- + \tfrac{n}{2(n-1)}p_-^2\big]$,
+which is $-T_n$ of~\eqref{eq:Tn}, as a symbolic reduction for
+$n = 0, \ldots, 4$ on the general diagonal metric confirms.
+The statement of section~\ref{sec:4.5} follows: for $n \ge 1$ the energy is a sum of
+positive radial terms and a positive semi-definite transverse form, and it
+vanishes only on $r$-independent pure gauge, so a source-free, horizon-regular
+zero mode must be pure gauge, while $n = 0$, with $p_+ = 2w$, reproduces
+$N_0$ times the density $-Pw'^2 + Qw^2$, whose Euler--Lagrange equation
+is the zero-mode equation of appendix~\ref{app:charged-zero-mode}.
+
+The argument of section~\ref{sec:4.5} is made for static, $z$-independent
+perturbations. With a dependence $e^{ik_zz}$ the $(x,z)$ and $(y,z)$ terms
+of the energy become
+$\tfrac14\sqrt{-g}\,g^{xx}g^{zz}\big(|D_+W_z - ik_zW_+|^2 + |D_-W_z - ik_zW_-|^2\big)$,
+two squares that mix $W_z$ with $W_\pm$, while the $(x,y)$ form is unchanged.
+For $n \ge 1$ the energy therefore stays non-negative, with kernel the pure
+gauge $D_M(\theta\psi_{n-1}e^{ik_zz})$, and for $n = 0$, where
+$W_- = W_z = 0$, the new term is the positive mass $N_0 e^{-Z}k_z^2w^2$.
+A dependence on $z$ cannot produce a zero mode where the $k_z = 0$ operator
+has none.
+
+The onset is also static. The background has no $A_t$ and no $g_{ti}$, so
+time derivatives enter the quadratic action only through $|F_{ti}|^2$:
+\begin{equation}
+L = \tfrac12\sqrt{-g}\,(-g^{tt})g^{ii}|F_{ti}|^2 - \mathcal V[W]~,
+\end{equation}
+where $\mathcal V$ is the static energy above. The magnetic field makes the
+operator of $\mathcal V$ Hermitian rather than real symmetric, but it does
+not add a term linear in $\partial_t$. Take a mode $e^{-i\omega t}$ with
+$\mathrm{Im}\,\omega > 0$, ingoing and source-free, in the gauge $W_t = 0$.
+The components of $W$ in this gauge then vanish at the horizon like
+$(r - r_p)^{\mathrm{Im}\,\omega/U'(r_p)}$; $F_{ri}$ grows like
+$(r - r_p)^{\mathrm{Im}\,\omega/U'(r_p) - 1}$, but every integrand goes
+like $(r - r_p)^{2\mathrm{Im}\,\omega/U'(r_p) - 1}$ and every surface term
+like $(r - r_p)^{2\mathrm{Im}\,\omega/U'(r_p)}$. Contracting the equations
+with $\bar W$ therefore gives, without surface terms,
+\begin{equation}
+\frac{\omega^2}{|\omega|^2}\int\sqrt{-g}\,(-g^{tt})g^{ii}|F_{ti}|^2 = 2\,\mathcal V[W]~.
+\end{equation}
+Hence $\omega^2$ is real, so $\omega = i\Gamma$, and the static energy of
+the mode is negative. For $n \ge 1$, $\mathcal V \ge 0$ and no mode grows,
+also at $k_z \neq 0$: $W_r$, which this gauge leaves in place, enters
+$\mathcal V$ only through the squares $|F_{ri}|^2$, and the transverse form
+does not contain it. For $n = 0$ the mode obeys
+$(Pw')' + Qw = \Gamma^2 R\,w$ with $R = e^{Z}/U$ positive,
+a self-adjoint problem whose continuum begins at $\Gamma^2 = 0$; by Sturm
+oscillation the number of its growing modes equals $\#\{k : B_k < B\}$,
+and they emerge through $\omega = 0$. A chemical potential would add a term linear in
+$\partial_t$ and shift $\omega$ to $\omega - \mu$, which is where the
+argument stops.
+
+We checked the $n = 0$, $k_z = 0$ channel numerically on the brane at
+$\beta = 1$, $45$ and $10^4$ and in the probe limit, by collocation in
+ingoing coordinates and independently by the argument principle applied to
+the shooting source coefficient. Both count exactly
+$\#\{k : B_k < B\}$ modes in the upper half plane; the collocation
+eigenvalues are purely imaginary to
+$2\times10^{-11}$, and one of them crosses $\omega = 0$ exactly at $B_c$.

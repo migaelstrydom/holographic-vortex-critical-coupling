@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+logs/
+/figures/
+# LaTeX build products
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/missfont.log
+paper/main.pdf
+# figures are regenerated; only the ones the paper includes are tracked
+backreaction/figures/*.png
+# packaging and scratch
+build/
+dist/
+*.egg-info/
+scratch/

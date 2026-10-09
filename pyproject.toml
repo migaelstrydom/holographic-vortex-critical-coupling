@@ -1,0 +1,84 @@
+[project]
+name = "holographic-vortex-critical-coupling"
+version = "0.1.0"
+description = "Code and paper for 'A critical coupling for the magnetic instability of holographic SU(2) plasmas'"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { file = "LICENSE" }
+dependencies = [
+    "matplotlib>=3.10",
+    "mpmath>=1.3",
+    "numpy>=2.4",
+    "scipy>=1.17",
+    "sympy>=1.14",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+    "ruff>=0.14",
+]
+
+# Reproducibility pins.  `dependencies` above states what the code *needs*; the
+# constraints below state what the published numbers were *computed with* (the
+# environment as of 4 September 2026).  Bumping these is a deliberate act: rerun
+# reproduce.sh and the slow test tier before doing it.
+[tool.uv]
+constraint-dependencies = [
+    "matplotlib==3.10.9",
+    "mpmath==1.3.0",
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "sympy==1.14.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# The main-tree numerics live as flat top-level modules and import each other by
+# bare name (`from spectral_check import cheb`, `import lll_identity as lll`).
+# Mapping `scripts` onto the wheel root makes those imports resolve from any
+# working directory, with no PYTHONPATH or sys.path setup. `backreaction` is a
+# real package at its own name (derivations/, systems/, numerics/, anchors/,
+# data/); its `figures/` output directory is excluded from the wheel.
+[tool.hatch.build.targets.wheel]
+only-include = ["scripts", "backreaction"]
+
+[tool.hatch.build.targets.wheel.sources]
+"scripts" = ""
+
+[tool.hatch.build]
+exclude = ["backreaction/figures"]
+
+# Rule set picked to avoid fighting physics naming: no E501 (line
+# length) or N803/N806 (argument/local naming) -- `D2`, `L`, `M`, `B_c`, `J2`,
+# `Hxx` etc. are correct as written.
+[tool.ruff]
+target-version = "py313"
+extend-exclude = ["scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["F", "B", "SIM", "UP"]
+# SIM300 ("Yoda condition") fires on `value == pytest.approx(expected)`, which is
+# the canonical pytest idiom -- reversing it puts the expected value on the left
+# and degrades the assertion message.  The test tree is in extend-exclude above,
+# so this only matters when tests are passed to ruff explicitly (an explicit path
+# overrides the exclusion), but that is exactly when the noise is in the way.
+ignore = ["SIM300"]
+
+# `backreaction/systems/` is SymPy output: the generators choose its layout and
+# `generated.stamp()` pins the result byte-for-byte via content_sha256.  Letting
+# the formatter rewrite it would invalidate every stamp and make the slow-tier
+# regeneration diff fail against a formatter the generators know nothing about.
+# It stays linted (it is not in extend-exclude) -- only unformatted.
+[tool.ruff.format]
+exclude = ["backreaction/systems/*.py"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+addopts = "-m 'not slow' --strict-markers"
+markers = [
+    "slow: reruns a full derivation or scan (minutes); excluded by default, run with -m slow",
+]

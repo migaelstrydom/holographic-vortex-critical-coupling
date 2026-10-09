@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite the paper."
+title: "A critical coupling for the magnetic instability of holographic SU(2) plasmas: code and paper"
+authors:
+  - family-names: Strydom
+    given-names: Migael
+    email: migael@strydom.me.uk
+repository-code: "https://github.com/migaelstrydom/holographic-vortex-critical-coupling"
+# The code is MIT-licensed (LICENSE). The paper text, bibliography, figures and
+# README are CC BY 4.0 (LICENSE-docs); see NOTICE. CFF reads a list of licences
+# as a choice between them, not a split, so only the code's licence is given.
+license: MIT
+preferred-citation:
+  type: article
+  title: "A critical coupling for the magnetic instability of holographic SU(2) plasmas"
+  authors:
+    - family-names: Strydom
+      given-names: Migael
+  year: 2026
+  notes: "arXiv identifier to be added on submission"

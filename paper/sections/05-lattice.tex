@@ -1,0 +1,262 @@
+\section{The triangular lattice forms below \texorpdfstring{$\alpha_L = 0.372$}{alpha\_L = 0.372}}
+\label{sec:5}
+
+\subsection{Gravity adds an attractive channel to the vortex interaction}
+\label{sec:5.1}
+
+Below the critical coupling the normal phase is unstable, and we ask which
+lattice forms and whether it is stable. We follow the probe-limit route
+of~\cite{Bu:2012mq} and expand the free energy to quartic order in the
+condensate, now on the brane and with the condensate sourcing the metric as
+well as the abelian field. Just above the onset
+$W_x = \eta\,w_0(r)\,\psi(x,y)$, $W_y = -iW_x$, with $w_0$ the zero mode of
+section~\ref{sec:3} and $\psi$ a lowest-Landau-level function with one flux
+quantum per unit cell. The Fourier coefficients $\omega_G$ of $|\psi|^2$,
+with $G$ a reciprocal lattice vector, have $|\omega_G|^2 = e^{-\gamma_G/2}$ with
+$\gamma_G = G^2/B$ (appendix~\ref{app:probe-lll-identity}), which depends
+only on the shape of the lattice; we write $\gamma = s/B$ for a general
+squared harmonic $s = G^2$. The free energy per unit area is
+\begin{equation}
+F = -\epsilon\,\eta^2 + \Big[\tfrac12 K_{G=0} + C(\tau;\beta)\Big]\eta^4~,
+\qquad
+C(\tau;\beta) = \tfrac12\sum_{G\neq0} e^{-\gamma_G/2}\,K(\gamma_G B_c(\beta);\beta)~,
+\end{equation}
+where $\epsilon \propto B - B_c$ and $\tau$ labels the lattice shape
+(section~\ref{sec:5.2}). The uniform term $K_{G=0}$ is the same for every
+lattice, and the shell sum $C$ selects the lattice.
+
+The shell sum is built from the quartic kernel $K(s;\beta)$, the self-interaction
+of the condensate through a density modulation of wavenumber $G$. The
+density sources the abelian field and the metric, and since the background
+depends on $r$ only, the response at each $G$ is a radial boundary value
+problem depending on $s$ alone (appendix~\ref{app:response}). The kernel is
+\begin{equation}
+K(s;\beta) = \big(C_4 - X\big)(s;\beta) - \tfrac12\,\mathcal{P}(s;\beta)~, \qquad
+C_4 = \int p_1\,w_0^4\,dr~,
+\end{equation}
+with $p_1 = e^{Z-2V}$ and $p_2 = Ue^Z$ the two weights of the
+Sturm--Liouville problem of section~\ref{sec:3}, $(p_2 w')' + Bp_1 w = 0$.
+We normalise the zero mode on each brane by $\int p_1 w_0^2\,dr = 1$. The
+contact term $C_4$ is the self-repulsion of the condensate and $X$ its
+screening by the induced $U(1)$ field. In the probe limit this bracket is
+the whole kernel, and its positivity is what makes the vortices repel and
+form a lattice. The new term $\mathcal{P}$ is the exchange of the metric
+response between two insertions of the condensate stress tensor. Its
+weight $\tfrac12$ relative to $X$ is fixed by the quadratic on-shell action
+(appendix~\ref{app:response-metric}). We write $X_{\rm ab}$ for the
+screening by the photon alone with the metric frozen; it equals $X$ in the
+probe limit (appendix~\ref{app:response-abelian}). Pairing the metric
+response with the photon's Maxwell stress as well gives the dressed
+pairing $\mathcal{P}_{\rm dress}$, and $K = C_4 - X_{\rm ab} -
+\tfrac12\mathcal{P}_{\rm dress}$ splits the kernel into gauge-invariant
+parts (appendix~\ref{app:response-metric}). On the grid
+$0 < \beta \le 45$ described below and on the throat,
+$\mathcal{P}_{\rm dress} > 0$: gravity lowers
+the kernel below the photon-only kernel $C_4 - X_{\rm ab}$, as the
+screening lowers it below $C_4$.
+
+The uniform term $K_{G=0}$ is the response to a strictly uniform
+condensate at fixed temperature and field. It is a separate radial problem,
+in which the photon does not respond, since the Bianchi identity fixes the
+uniform part of $F_{xy}$ at $B$. We computed it directly and find that it
+equals the long-wavelength limit of the kernel,
+\begin{equation}
+K_{G=0}(\beta) = K_0(\beta) \equiv \lim_{s\to0}K(s;\beta)~,
+\end{equation}
+to $10^{-8}C_4$ on every rung of the ladder up to $\beta = 10^8$; we write $K_0$ for both from here on. The agreement is not
+automatic, because the gauge used at finite $G$ becomes singular as
+$G \to 0$; appendix~\ref{app:response-metric} shows that the pairing is
+insensitive to that singular gauge transformation. The quartic coefficient of a uniform lattice is
+therefore $\tfrac12K_0 + C$.
+
+We computed the kernel on a dense grid up to $\beta = 45$ ($\alpha = 0.1745$), at selected harmonics along the ladder up to its rung
+$\beta = 10^8$ ($\alpha = 0.544$), and at $\alpha_\star$
+as a fixed problem on the throat (appendix~\ref{app:numerics-scan}). On the
+grid it is positive everywhere but suppressed at long wavelength: $K/C_4$
+at $s = 0.02B_c$ falls from $0.98$ at $\beta = 0$ to $0.18$ at $\beta = 45$,
+and from $\beta \approx 8$ the kernel has a shallow interior maximum at
+$s \lesssim B_c$ (figure~\ref{fig:kernel}). At $\alpha_\star$ it is negative
+at long wavelength.
+
+\begin{figure}[t]
+\centering
+\includegraphics{kernel_family}
+\caption{The quartic kernel. Left: $K(s;\beta)/C_4$ against $s/B_c$ for
+$\beta = 0, 1, 4, 8, 16, 45$ (light to dark), with the first shells $2\pi$
+(square) and $4\pi/\sqrt3$ (triangular) marked. Right: the throat kernel
+$K/C_4$ at $\astar$ against $\gamma = s/B_c$,
+negative below $\gamma_0 = 0.8465$ (shaded), with (inset) its gauge-invariant
+split (appendix~\ref{app:response-metric}): the photon pairing
+$(C_4 - X_{\rm ab})/C_4$ with the metric frozen, and the dressed metric
+pairing $-\mathcal{P}_{\rm dress}/2C_4$, whose near-cancellation
+produces it.}
+\label{fig:kernel}
+\end{figure}
+
+\subsection{The triangular lattice is the best Bravais lattice up to \texorpdfstring{$\alpha_I$}{alpha\_I}}
+\label{sec:5.2}
+
+Up to rotation and scale, a one-flux-quantum Bravais lattice is fixed by a
+modular parameter $\tau = \tau_1 + i\tau_2$ in the upper half plane, with
+reciprocal harmonics
+\begin{equation}
+\gamma_{mn} = \frac{2\pi}{\tau_2}\,|m + n\tau|^2~, \qquad (m,n) \neq (0,0)~.
+\end{equation}
+The set of harmonics is invariant under $\tau \to \tau + 1$ and
+$\tau \to -1/\tau$, so $C$ is modular invariant for any kernel. The
+triangular lattice $\tau = e^{i\pi/3}$ and the square lattice $\tau = i$,
+the elliptic fixed points, are therefore stationary at every $\beta$.
+
+In the probe limit the kernel is completely monotone in $s$, and
+Montgomery's
+theorem~\cite{Montgomery:1988mt,Cohn:2007universally,Betermin:2016theta}
+makes the triangular lattice the global minimum over all one-flux-quantum
+Bravais lattices (appendix~\ref{app:probe}). On the brane we know of no
+Stieltjes representation for the metric pairing, so the proof of
+appendix~\ref{app:probe} does not carry over. The function the theorem
+needs, $e^{-\gamma/2}K(\gamma B_c)$, is in fact not completely monotone from
+$\beta \approx 4$, where it turns concave at long wavelength, and from
+$\beta \approx 8$ the kernel itself is not monotone. This does not by itself disfavour the triangular
+lattice~\cite{Betermin:2016theta,Betermin:2019noncm}, which fully
+backreacted holographic lattices in a magnetic field also
+prefer~\cite{Donos:2015eew,Donos:2020viz}.
+We scanned $C$ over the fundamental domain up to $\tau_2 = 5$ on every
+brane of the grid and every rung of the ladder up to $\beta = 10^8$
+($\alpha = 0.544$; appendix~\ref{app:numerics-scan}). On this grid the minimiser never leaves the triangular
+point, and the Hessian there stays positive and
+isotropic. We measure the selection by the relative margin over the square
+lattice, $(C_\square - C_\triangle)/C_\triangle$, which falls slowly from
+$0.246$ in the probe limit to $0.227$ at $\alpha = 0.1745$ and $0.18$ at
+$\beta = 10^8$. The shape term itself is small,
+$C_\triangle \approx 0.01\,C_4$, so in the probe limit this margin is a
+$0.56\%$ difference in condensation energy.
+
+Towards the stripe edge $C$ grows in proportion to $\sqrt{\tau_2}$ times a
+Gaussian average $I(\beta)$ of the kernel over momentum transfers of order
+$B_c$ (appendix~\ref{app:numerics-scan}). This average stays
+positive up to $\alpha_I = 0.494$, so for $\alpha < \alpha_I$, $C$ grows
+towards the stripe edge, and with the edges scanned to $\tau_2 = 50$
+(appendix~\ref{app:numerics-scan}) the triangular minimum is global. Above $\alpha_I$,
+$C$ is unbounded below towards the stripe edge, a sign that the truncation
+has left its domain of validity rather than a prediction of infinite
+elongation. Since $\alpha_I > \alpha_L$, this only concerns lattices that
+are already unstable (section~\ref{sec:5.3}).
+
+At $\alpha_\star$ the selection becomes a $\beta$-independent problem on the
+BTZ throat, because the frozen flux plane holds $s/B$ fixed
+(appendix~\ref{app:response-throat}). The triangular lattice
+still beats the square, with relative margin $+0.1766$, but the kernel is negative for
+$\gamma < \gamma_0 = 0.8465$, because the lighter of the two neutral
+channels of the metric response has a longer range than the photon that
+screens the repulsion. The brane kernel on the ladder converges onto these
+values (appendix~\ref{app:numerics-scan}).
+
+\subsection{The uniform lattice destabilises at \texorpdfstring{$\alpha_L = 0.372$}{alpha\_L = 0.372}}
+\label{sec:5.3}
+
+Along the ladder $K_0/C_4$ falls monotonically and changes sign at
+$\alpha = 0.3506$, $\beta = 3305$ (figure~\ref{fig:density}).
+Beyond this coupling the interaction between density modulations of the
+condensate is attractive at long wavelength. In the boundary theory this
+is the exchange of the plasma's energy and pressure fluctuations between
+the modulations. On the ladder $K_0/C_4$ saturates near $-0.06$, the value
+of the throat kernel as $\gamma \to 0$ (figure~\ref{fig:kernel}, right).
+
+A long-range attraction does not by itself destabilise the lattice, because
+modulating the condensate density also modulates the lattice harmonics,
+whose local energy resists it. Modulating the density of the uniform
+lattice as $1 + \delta\cos(q\cdot x)$ on scales long compared with the
+magnetic length adds harmonics at $G \pm q$ as well as at $q$, and to
+second order the quartic energy rises by
+\begin{equation}
+\Delta F = \tfrac14\,\delta^2\eta^4 \sum_G e^{-\gamma_G/2}\,K\big(|G+q|^2;\beta\big)
+\;\longrightarrow\; \tfrac14\,\delta^2\eta^4\,\big[K_0 + 2C_\triangle\big]
+\qquad (q \to 0)~.
+\end{equation}
+The inverse compressibility of the lattice at fixed flux is thus
+$K_0 + 2C_\triangle$, not $K_0$. To check that no other perturbation goes
+first, we computed the second variation of the quartic functional about the
+uniform lattice over all lowest-Landau-level perturbations at one flux
+quantum. It splits over the magnetic Brillouin zone into $2\times2$ blocks
+(appendix~\ref{app:response-hessian}). As $q \to 0$ the lower
+branch is the Goldstone mode of translations and the upper branch tends to
+$2(K_0 + 2C_\triangle)$. On a dense grid over the zone, from the probe
+limit to $\alpha_L$, no eigenvalue is negative (in the probe limit the
+lowest eigenvalue on the zone boundary is $0.0186\,C_4$, at the midpoint
+$M$ of an edge). The
+first instability of the uniform triangular lattice is therefore the
+long-wavelength density mode, at $K_0 + 2C_\triangle = 0$, where the
+quartic coefficient $\tfrac12K_0 + C_\triangle$ changes sign, that
+is
+\begin{equation}
+\alpha_L = 0.3722
+\end{equation}
+(table~\ref{tab:couplings}).
+
+Since $K_{G=0} = K_0$, the same combination is the quartic coefficient of
+the uniform lattice, so $\alpha_L$ is also where the transition changes
+order: it is a tricritical point of the onset line. It plays the role of
+$\kappa = 1/\sqrt2$~\cite{Abrikosov:1956sx} in Ginzburg--Landau theory with a dynamical gauge
+field, where the sign of the same Abrikosov quartic coefficient at
+$H_{c2}$ separates type II from type I. Below $\alpha_L$ the normal phase gives way at $B_c$, in a
+second-order transition, to a stable triangular lattice; between
+$\alpha = 0.351$ and $\alpha_L$, where $K_0 < 0$, it is held stable by the
+$2C_\triangle$ term. Above $\alpha_L$
+the quartic coefficient is negative: the transition is first order, $B_c$
+is the spinodal of the normal phase, and the uniform lattice is itself
+unstable to long-wavelength modulation. The coefficient stays negative as
+far as we computed the kernel, with
+$(\tfrac12K_0 + C_\triangle)/C_4 = -0.025$ at $\beta = 10^8$, and what
+replaces the lattice there is outside the quartic expansion. No other
+one-flux-quantum Bravais lattice is stable above $\alpha_L$ either. Less
+compact lattices keep their density stiffness $K_0 + 2C(\tau)$ longer; the
+square keeps it to $\alpha = 0.3767$. But the square is a saddle of $C$ and
+is unstable at the zone boundary at every coupling, and other shapes are
+not stationary. Above $\alpha_L$, every lattice that still has positive
+density stiffness is unstable to shear (appendix~\ref{app:numerics-scan}).\footnote{The electric
+$p$-wave transition of~\cite{Ammon:2009xh} also turns first order beyond a
+coupling, $\alpha \approx 0.13$ in our variable.}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lccc>{\raggedright\arraybackslash}p{0.40\textwidth}}
+\toprule
+coupling & $\beta$ & $B_c u_H^2$ & $T_c/T_c^{\rm probe}$ & what changes there \\
+\midrule
+$0.351$ & $3.31\times10^3$ & $97.1$ & $0.23$ & long-wavelength vortex interaction turns attractive, $K_0 = 0$ \\
+$\alpha_L = 0.372$ & $6.51\times10^3$ & $132.3$ & $0.20$ & uniform lattice unstable; transition first order, $B_c$ a spinodal \\
+$\alpha_\star = 2/3$ & $\infty$ & $\infty$ & $0$ & no linear instability of the charged sector at any $B$, $T$ \\
+\bottomrule
+\end{tabular}
+\caption{The couplings that organise the lattice and the onset, with the
+backreaction parameter and the critical field at fixed temperature on the
+onset curve, and the onset temperature at fixed field relative to its probe
+value, $T_c/T_c^{\rm probe} = (5.13/B_c u_H^2)^{1/2}$. Below $\alpha_L$ a
+triangular vortex crystal forms in a second-order transition; whether a
+condensed phase exists above $\alpha_\star$ is open.}
+\label{tab:couplings}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics{density_threshold}
+\caption{The long-wavelength kernel along the ladder: $K_0/C_4$ (circles)
+and the quartic coefficient of the uniform lattice
+$(\tfrac12 K_0 + C_\triangle)/C_4$ (squares) on the rungs $\beta = 1$ to
+$10^8$ against $\alpha$, with $\ln\beta$ of the ladder on the top axis. The
+long-range interaction turns attractive where $K_0$ changes sign, at
+$\alpha = 0.351$; the uniform lattice destabilises, and the transition
+turns first order, where the quartic coefficient does, at
+$\alpha_L = 0.372$. The crystal and first-order regimes, and the regime
+without a charged instability, are shaded.}
+\label{fig:density}
+\end{figure}
+
+At fixed $\alpha$ the only scale is the temperature, so the onset is
+$B_c = f(\alpha)\,T^2$ exactly, with $f = \pi^2 B_c u_H^2$ from
+figure~\ref{fig:1}. Cooling at fixed field therefore meets it at
+$T_c = \sqrt{B/f(\alpha)}$ for every $\alpha < \alpha_\star$. Gravity lowers
+$T_c$ to a fifth of its probe value by $\alpha_L$
+(table~\ref{tab:couplings}) and to under two percent of it at
+$\alpha = 0.55$, and $T_c$ vanishes with the essential singularity of
+section~\ref{sec:4.6} at $\alpha_\star$.

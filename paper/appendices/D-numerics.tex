@@ -1,0 +1,330 @@
+\section{Numerical methods and the approach to the critical coupling}
+\label{app:numerics}
+
+Every computed number in the paper is checked by a second, independent
+computation, with either a different method or a different discretisation
+of the same equations; fitted coefficients are quoted with their fit
+windows. Table~\ref{tab:checks} collects the agreement between the two and
+the exact results that test the solvers; the subsections describe the
+methods.
+
+\begin{table}[p]
+\centering
+\footnotesize
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.35\textwidth}>{\raggedright\arraybackslash}p{0.33\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}}
+\toprule
+quantity & compared with & agreement \\
+\midrule
+\multicolumn{3}{l}{\emph{brane} (\ref{app:numerics-brane})} \\
+profiles, $\beta \le 50$ & collocation vs shooting & $10^{-9}$; derivatives and entropy shift $4\times10^{-9}$ \\
+constraint & on the solutions & $4\times10^{-9}$ at $\beta = 45$, $2\times10^{-5}$ on the top rung \\
+entropy slope $\delta S/S = \beta/4 + O(\beta^2)$ & exact & $10^{-6}$ \\
+\midrule
+\multicolumn{3}{l}{\emph{onset} (\ref{app:numerics-onset})} \\
+probe $B_c u_H^2 = 5.13126764$ & collocation at $\beta = 0$ & $5\times10^{-12}$ \\
+onset on the 23 rungs & collocation vs horizon shooting & $1.2\times10^{-10}$ in $\alpha$, $6\times10^{-11}$ in $B_c u_H^2$ \\
+onset in $d = 5, 6$ & shooting vs Chebyshev, independent background & $8\times10^{-10}$ \\
+same code, $d = 4$; $d = 3$ & ladder and scan; exact magnetic RN--AdS$_4$ & $10^{-10}$; $6\times10^{-12}$ \\
+$\alpha_c(3)$ & collocation, shooting, series & $3\times10^{-14}$ \\
+$\alpha_c(3)$ & domain-wall flow vs exact background & $2\times10^{-11}$ \\
+onset beyond the ladder, $\beta = 10^{24}$--$10^{66}$ & horizon shooting vs matching condition & $1.2\times10^{-11}$ in $\alpha$ \\
+$\phi_\star$, $0.25 \le \nu \le 0.6$ & $r$ chart vs domain-wall gauge & $3\times10^{-10}$ \\
+offset in $\ln(\rho_\star/h)$ at $T = 0$ & two charts & $1.4\times10^{-9}$ \\
+\midrule
+\multicolumn{3}{l}{\emph{response and kernel} (\ref{app:numerics-response}, \ref{app:numerics-scan})} \\
+kernel, whole scan & collocation vs finite differences & $6\times10^{-6}$ at $s = 0.02B_c$, $3\times10^{-8}$ for $s \ge 6B_c$ \\
+$C_\triangle$, $C_\square$ on the ladder to $\beta = 10^8$ & collocation vs finite differences & $1.5\times10^{-9}$ \\
+$\alpha_L$ & collocation vs finite differences & $6\times10^{-12}$ \\
+$\alpha_I$ & collocation vs finite differences & $9\times10^{-9}$ \\
+horizon flux $\mathcal{Q}(r_p)$ & relative to the kernel & below $10^{-9}$ \\
+tail identity (app.~\ref{app:response-abelian}) & exact & $2\times10^{-13}$ \\
+kernel at $\beta = 0$ & probe kernel & $3\times10^{-12}$ \\
+dressing identity (app.~\ref{app:response-metric}) & exact & $8\times10^{-13}$ \\
+kernel in radial; generic gauge (app.~\ref{app:response-metric}) & transformed solutions & $6\times10^{-10}$; $7\times10^{-9}$ \\
+lowest-Landau-level identity (app.~\ref{app:probe-lll-identity}) & direct sum on three lattices & $10^{-10}$ \\
+throat abelian kernel $\mathcal{S}$ & finite differences vs Green's function & $7\times10^{-8}$ \\
+full throat kernel & finite differences vs shooting from both ends & $7\times10^{-7}$ at $\gamma = 0.02$, $10^{-7}$ for $\gamma \ge 0.3$; shell sums $1.5\times10^{-9}$ \\
+$K_{G=0}$ & collocation vs shooting & $1.1\times10^{-10}C_4$ \\
+$K_{G=0}$ at small $\beta$ & independent chart and gauge & $2\times10^{-8}$ \\
+$K_{G=0}$ vs $K_0$ & $s \to 0$ limit of the $G \neq 0$ kernel & $10^{-8}C_4$ \\
+triangular block spectrum (app.~\ref{app:response-hessian}) & Hessian on tori of 36 and 24 flux quanta & $10^{-14}$ \\
+\bottomrule
+\end{tabular}
+\caption{Agreement between independent methods, and with exact results,
+for the numbers quoted in the paper.}
+\label{tab:checks}
+\end{table}
+
+\subsection{The brane}
+\label{app:numerics-brane}
+
+The reduced equations in the coordinate $r$ are
+\begin{equation}
+\begin{aligned}
+U'' &= 8 - 2U'V' - U'Z' + \tfrac23\,\beta\,e^{-4V}~,\\
+V'' &= \frac{4 - U'V' - \tfrac23\,\beta\,e^{-4V}}{U} - 2V'^2 - V'Z'~,\\
+Z'' &= \frac{4 - U'Z' + \tfrac13\,\beta\,e^{-4V}}{U} - 2V'Z' - Z'^2~,
+\end{aligned}
+\end{equation}
+with the first-order constraint
+$U\big(2V'^2 + 4V'Z'\big) + U'\big(2V' + Z'\big) + \beta\,e^{-4V} = 12$, in
+which $\alpha$ and $B$ appear only through $\beta = \alpha B^2$. The
+constraint is preserved by the evolution. We work in $u = 1/r \in [0, 1]$
+with the horizon at $u = 1$, where $U = 0$ and $U' = 4$, and the boundary
+at $u = 0$, where $U/r^2$, $e^{2V}/r^2$ and $e^{2Z}/r^2 \to 1$. The equations
+fix the leading coefficient of $U$ at one, and the two remaining boundary
+normalisations fix the horizon data $V(1)$ and $Z(1)$. We solve by
+Chebyshev collocation in $u$ with Newton iteration, continued in $\beta$
+from the previous rung, since a cold Newton start at large $\beta$
+converges to a spurious branch. Independently, we shoot from the horizon
+with a series start. The solver is tested against the Schwarzschild limit
+and the slope of the fixed-temperature entropy shift (table~\ref{tab:checks}).
+
+The fixed point of section~\ref{sec:4.1} and its BTZ version were checked
+against all fifteen independent components of the Einstein equations and
+against the reduced system above. The general-$d$ throat of
+section~\ref{sec:4.3} was derived with $d$ symbolic and checked against
+explicit curvature computations at $d = 3, 4, 5, 6$.
+
+\subsection{The onset}
+\label{app:numerics-onset}
+
+The eigenvalue problem of section~\ref{sec:3} is solved on the same grid as
+a generalised eigenvalue problem, with horizon regularity and the
+source-free condition imposed as boundary rows. Independently,
+the brane and the zero mode are integrated together outward from a regular
+horizon. The brane is labelled by
+$\varepsilon = 6 - \beta e^{-4V} = 6 - 9\alpha b_h^2$ at the horizon, the
+magnetic term is rewritten so that nothing cancels as
+$\varepsilon \to 0$, and the onset is the lowest root of the source
+coefficient, read off far outside the crossover, where the extraction error
+is of order $r_c/r_{\max}$. This method needs no continuation in $\beta$
+and reaches $\varepsilon = 10^{-24}$, that is $\beta \approx 10^{66}$. Along the ladder, with $b_h$ and $\beta e^{-4V}$ evaluated at the
+horizon,
+
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+$\beta$ & $B_c u_H^2$ & $\alpha$ & $b_h$ & $\beta e^{-4V}$ \\
+\midrule
+$45$ & $16.06$ & $0.1745$ & $1.5103$ & $3.58$ \\
+$10^4$ & $161.2$ & $0.3850$ & $1.2727$ & $5.613$ \\
+$10^6$ & $1433$ & $0.4868$ & $1.1634$ & $5.930$ \\
+$10^8$ & $1.36\times10^4$ & $0.5445$ & $1.1054$ & $5.9877$ \\
+$10^{10}$ & $1.31\times10^5$ & $0.5788$ & $1.0731$ & $5.9979$ \\
+$10^{11}$ & $4.11\times10^5$ & $0.5908$ & $1.0622$ & $5.9991$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+so the interior reaches the fixed point and the onset drives it to
+marginality. Beyond the ladder the horizon-shooting scan gives
+$\alpha = 0.6453$, $0.6591$ and $0.6626$ at $\beta = 10^{24}$, $10^{45}$
+and $10^{66}$; the matching condition of
+appendix~\ref{app:numerics-matching} reproduces these to $1.2\times10^{-11}$. Along the whole scan $\alpha(\beta)$ increases strictly and
+$B_c u_H^2$ is convex in $\alpha$. Following the lowest eigenvalue
+suffices: at fixed $\beta$ each higher radial overtone condenses at a
+larger field $B_k$, and so at a smaller coupling $\beta/B_k^2$. The minimum
+of $b_h$ over the scan is $1.003$, at its top.
+
+At zero temperature the brane is constructed out of the
+$\mathrm{AdS}_3 \times \mathbb{R}^2$ fixed point along its irrelevant
+deformation (appendix~\ref{app:numerics-matching}), independently in the
+domain-wall gauge and in the chart of appendix~\ref{app:numerics-brane}.
+The source-free threshold mode, integrated from the boundary into the
+throat, has no zero and arrives as
+$(r - r_0)\,w = c_0 + c_1\ln\big((r - r_0)/\rho_\star\big)$ with
+$c_1/c_0 = -0.0350004$ in both constructions. For
+$\sqrt{\alpha_\star/\alpha}$ between $0.5$ and $0.995$ the solution that
+decays in the throat always carries a boundary source of the same sign, so
+there is no zero mode above $\alpha_\star$ (section~\ref{sec:4.2}). For $d = 5$ and $6$ the brane is built the same way, from the
+$\mathrm{AdS}_{d-1} \times \mathbb{R}^2$ fixed point along its single
+irrelevant deformation; the threshold mode again has no zero, and its
+throat form $\rho^{(d-2)/2}w = c_0 + c_1\ln(\rho/\rho_\star)$ has
+$c_1/c_0 = -0.350$ and $-0.996$ (table~\ref{tab:dims}).
+
+At finite temperature in $d = 5$ and $6$ the same horizon shooting, with
+the source extraction $c_0 = w + r w'/(d-2)$, gives an onset coupling that
+rises monotonically from the probe limit to $\beta = 1.5\times10^{132}$
+and $1.0\times10^{117}$ respectively, where $\alpha/\alpha_\star(d) = 0.99861$
+and $0.99896$. It stays below $\alpha_\star(d)$ throughout, with no zero in
+the onset mode. The exact relation
+$\alpha/\alpha_\star = (1 - \varepsilon/\beta_{\rm ext})(B_{\rm thr}/B_m)^2$,
+with $B_m$ the onset field in the frame where the flux plane has unit size
+at the horizon, $B_{\rm thr} = d(d-1)/4$ the throat's bound and
+$\beta_{\rm ext} = d(d-1)/(d-2)$, shows why: since $\varepsilon > 0$ at
+finite temperature, an onset field at or above the throat's bound,
+$B_m \ge B_{\rm thr}$, implies $\alpha < \alpha_\star(d)$. In $d = 3$ the
+onset field falls below the bound. The local slope
+$d\ln\beta/d(1/\nu)$, with $B_m = B_{\rm thr}(1 + \nu^2)$, tends to
+$8\pi/(d-2)$ from below, which is $4\pi$ for $d = 4$, so $\alpha$ reaches
+$\alpha_\star(d)$ only as $T \to 0$.
+
+In $d = 3$ the same construction on the extremal magnetic
+Reissner--Nordstr\"om--$\mathrm{AdS}_4$ brane gives a threshold mode with
+one zero in the throat, and the bound state disappears at
+$\alpha_c(3) = 3.0370100956$. Collocation, shooting and a series
+convergent up to the boundary share the equation, so their agreement tests
+the discretisations; the domain-wall flow and an independent construction
+on the exact background test the equation itself. A Rayleigh--Ritz bound
+with exact matrix elements proves $\alpha_c(3) > 3.0370$. At finite
+temperature the onset coupling crosses $8/3$ near
+$T/\sqrt B \approx 7.4\times10^{-4}$. In the variable
+$2e^2L^2/\kappa^2 = 2/\alpha$ of~\cite{Wong:2013rda}, whose threshold
+$3/4$ is $\alpha_\star(3)$, the zero-temperature threshold is $0.6585$.
+
+\subsection{The matching}
+\label{app:numerics-matching}
+
+The horizon phase of section~\ref{sec:4.6} is
+$\chi(\nu) = \arg\Gamma(-i\nu) - 2\arg\Gamma\big(\tfrac{1-i\nu}2\big)$,
+from the connection coefficient of the hypergeometric solution of
+appendix~\ref{app:response-throat}. The zero-temperature brane that
+supplies the outer phase $\phi_\star$ is constructed by integrating the
+equations of appendix~\ref{app:numerics-brane} out of the fixed point along
+its irrelevant deformation $V = V_0 + \delta\,\rho^{\Delta_+ - 2}$,
+$\Delta_+ - 2 = \sqrt{19/3} - 1$. This is the exponent of the heavier metric
+channel of appendix~\ref{app:response-throat} at $\lambda = 0$, an
+independent check on that mass matrix. The source-free mode is integrated
+inwards from the boundary and fitted in the throat to
+$\cos(\nu\ln(\rho/\rho_\star) + \phi_\star)$, with $\rho_\star$ the point
+where $e^{2V}$ has doubled from its throat value. Along the ladder
+$\ln(\rho_\star/h) \to \tfrac14\ln(\beta/6) + 0.031$, decreasing
+monotonically onto the limit $0.0313$ that the scaling symmetries of the
+equations give from the zero-temperature brane alone, in both constructions. The matching condition fixes the throat exponent
+$\nu_{\rm t}$, with $1 + \nu_{\rm t}^2 = (\alpha_\star/\alpha)^{1/2}$.
+Converted to $\nu = \sqrt{b_h - 1}$ with the exact relation
+$b_h = (1 + \nu_{\rm t}^2)(1 - \varepsilon/6)^{1/2}$, it reproduces the ladder with
+a relative error that decreases monotonically from $5\times10^{-3}$ at
+$\beta = 10^4$ to $6\times10^{-7}$ at $\beta = 10^{11}$. It is therefore a
+second method for the onset, and beyond the ladder, at
+$\beta = 10^{24}$, $10^{45}$ and $10^{66}$, it reproduces the
+horizon-shooting $\alpha$ to $1.2\times10^{-11}$.
+
+Exactly at $\alpha_\star$ the throat solutions are $\rho^{-1}$ and
+$\rho^{-1}\ln(\rho/\rho_\star)$. Fitting the source-free mode of the
+zero-temperature brane to their combination gives $c_1/c_0 = -0.035$, and
+the phase $\phi_\star(\nu)$ constructed from the same brane is the plateau
+of about $0.22$--$0.25$ over the throat part of the ladder, $0.25 \le \nu \le 0.6$
+(figure~\ref{fig:approach}, right). The leading term
+$|c_1/c_0|/\nu$ of $\tan\phi_\star$ describes it to ten percent only for
+$\nu \lesssim 0.1$, and the second, $0.50\,\nu$, extends that to
+$\nu \approx 0.3$.
+
+The slope $A = d\ln\beta_c/d(1/\nu)$, whose asymptotic value is $4\pi$, is
+close to $4(\pi/2 + 0.23) \approx 7.2$ on the plateau. A fit over the nine
+rungs $\beta \ge 10^7$ gives $A = 7.45$, and other windows give $7.44$ to
+$7.78$. The effective coefficient $2.25$ of section~\ref{sec:4.6} is a direct
+fit of $\ln\beta_c$ against $(\alpha_\star - \alpha)^{-1/2}$ on the same
+rungs, by the ladder and by the horizon-shooting scan alike; converting $A$
+through $\nu^2 \simeq (\alpha_\star - \alpha)/2\alpha_\star$ would give
+$2.15$, since on these rungs $\nu^2$ exceeds that form by 9 to 18 percent.
+The ladder sits near the minimum of a slowly rising curve, so a fit to it
+alone would mislead. Beyond the ladder, the horizon-shooting scan gives the
+local slope: it reaches its minimum $7.43$ at $\ln\beta \approx 21$ and rises to $7.89$,
+$8.93$ and $10.3$ at $\ln\beta = 40$, $77.5$ and $150$, which the matching
+condition, converted in the same way, reproduces to $2\times10^{-8}$ at
+$\ln\beta = 40$ and $10^{-9}$ beyond.
+
+\subsection{The response system}
+\label{app:numerics-response}
+
+The coupled system of appendix~\ref{app:response-metric} is solved by
+Chebyshev collocation on the grid of appendix~\ref{app:numerics-brane} and,
+as an independent discretisation of the same equations, by finite
+differences with Richardson extrapolation; their agreement bounds the error
+of the finite-difference solve rather than of the kernel. The boundary flux
+$\mathcal{Q}$ of the pairing identity vanishes on the solutions: at the
+horizon it is negligible, and towards the boundary it falls off as $1/r^2$,
+on every brane of the scan at four harmonics. The tail identity
+holds on every brane of the onset grid, and the dressing identity
+at every $\beta$ and $s$ of the scan. The five field equations displayed in
+appendix~\ref{app:response-metric} and their sources are read from the
+paper's source and checked against the system generated symbolically from
+the action and against an independent linearisation of the field equations;
+the displays of $\mathcal{L}_2$, $\mathcal{Q}$, $K$, $X$ and $\mathcal{P}$
+and the horizon flux are checked against the same generated system.
+
+\subsection{The lattice scan}
+\label{app:numerics-scan}
+
+The kernel of section~\ref{sec:5.1} was computed on $23$ values of $\beta$
+in $[0, 45]$ at $41$ harmonics from $s = 0.02B_c$ to $45B_c$, in
+the brane normalisation $\int p_1 w_0^2\,dr = 1$ of the zero mode. The
+functional
+$C(\tau;\beta) = \tfrac12\sum_{(m,n)\neq0} e^{-\gamma_{mn}/2}K(\gamma_{mn}B_c(\beta);\beta)$
+is evaluated on a grid over the fundamental domain $|\tau| \ge 1$,
+$|\tau_1| \le \tfrac12$, $\tau_2 \le 5$, followed by Nelder--Mead
+refinement, with $K$ splined in $s$ for generic $\tau$ and evaluated by
+direct solves at the exact shells of the triangular and square lattices. At
+$\beta = 0$ the gap $C_\square - C_\triangle = 0.00453744$ reproduces the
+probe value of appendix~\ref{app:probe} to all its digits. The grid minimum
+lies at $\tau = e^{i\pi/3}$ at every $\beta$ and on every rung of the
+ladder up to $\beta = 10^8$, and the Hessian there is isotropic to the
+floor of its finite-difference evaluation.
+
+Beyond $\tau_2 = 5$ the functional is controlled analytically. Along the
+edge $\tau_2 \to \infty$ the harmonics of a single row become dense, and
+Poisson summation gives
+\begin{equation}
+C(i\tau_2;\beta) = \tfrac12\sqrt{\tau_2}\,I(\beta) - \tfrac12K_0(\beta) + O\big(e^{-c\sqrt{\tau_2}}\big)~, \qquad
+I(\beta) = \int_{-\infty}^{\infty}dx\,e^{-\pi x^2}\,K(2\pi x^2B_c;\beta)~.
+\end{equation}
+The remainder is set by the singularity of $K(s)$ on the negative $s$ axis
+nearest the origin. In the probe limit this is the pole at $s = -B_c$ of
+the lowest radial mode (appendix~\ref{app:probe}), which gives
+$c = \sqrt{2\pi}$. The remainder decays only slowly in $\tau_2$, and on the
+brane it is larger, so both edges of the domain, $\tau_1 = 0$ and $\tfrac12$, were scanned to
+$\tau_2 = 50$ on every rung up to $\beta = 10^8$: there $C$ stays above
+$C_\triangle$ wherever $I > 0$. So $C$ is bounded below on the whole
+moduli space exactly when $I > 0$. At $\alpha_\star$ the negative lobe of
+the throat kernel makes $I < 0$, and the triangular lattice is there a
+local minimum among lattices of bounded $\tau_2$. The zero of $I(\beta)$ is
+located by a secant to $|I| < 10^{-6}C_4$, refined by a Newton step; this
+and a quadratic through three rungs with the kernel evaluated directly
+agree to $4\times10^{-9}$, and changing the interpolant, the quadrature or
+the resolution moves it by at most $2\times10^{-7}$, so
+$\alpha_I = 0.4939747 \pm 2\times10^{-7}$.
+
+On the throat, the abelian kernel $\mathcal{S}(\gamma)$ of
+appendix~\ref{app:response-throat} was computed by finite differences on a
+grid uniform in $\ln(\rho/h)$ with Richardson extrapolation, and
+independently from the hypergeometric Green's function. The full throat
+kernel is obtained from the response system of
+appendix~\ref{app:response-metric} on a finite interval in $\ln(\rho/h)$ with the
+degenerate horizon row and a far Dirichlet condition. Independently, it is
+obtained by shooting from both ends, with a Frobenius series at the horizon
+and the exact decaying solutions at the far end; the two agree to
+$7\times10^{-7}$ at $\gamma = 0.02$, where the finite-difference error is
+largest, and to $10^{-7}$ for $\gamma \ge 0.3$, their shell sums agree to
+$1.5\times10^{-9}$, and
+their direct roots put the sign change at $\gamma_0 = 0.8465$ to
+$7\times10^{-8}$. The brane kernel
+continued up the ladder at fixed $\gamma$ approaches it from above, with
+the worst deviation $0.009$ at $\beta = 10^8$ and shrinking at every rung.
+
+The long-wavelength kernel $K_0(\beta)$ of section~\ref{sec:5.3} is
+obtained on each rung as the strict uniform response $K_{G=0}$ of
+section~\ref{sec:5.1}, a separate radial problem solved by Chebyshev
+collocation and by shooting from the horizon; its checks, including the
+limit $s \to 0$ of the kernel at $G \neq 0$, extrapolated from
+$\gamma = 10^{-3}$--$8\times10^{-3}$, are in table~\ref{tab:checks}. The two routes to $K_0$ differ in derivation, gauge and the
+origin of the weight $\tfrac12$, but share the background, the zero mode
+and the condensate stress tensor.
+
+The zeros of $K_0$ and of $\tfrac12K_0 + C_\triangle$ are located by a
+secant in $\ln\beta$ between the bracketing rungs, each step a fresh
+background and response solve. For $\alpha_L$ the secant converges to
+$|\tfrac12K_0 + C_\triangle| < 10^{-10}C_4$. Two sources of error remain:
+collocation and shooting for the uniform problem differ by
+$1.5\times10^{-10}$ in $\alpha$, and replacing $K_{G=0}$ by the limit
+$s \to 0$ of the kernel at $G \neq 0$ moves the zero by
+$1.1\times10^{-8}$, which dominates. Raising the resolution and summing
+all shells each move it by less than $10^{-10}$.
+Hence $\alpha_L = 0.3721800 \pm 2\times10^{-8}$, at $\beta_L = 6510.5$ and
+$B_cu_H^2 = 132.26$. The same block formula, evaluated for every
+lattice shape, gives the full spectrum of the other Bravais lattices: their
+density thresholds lie above $\alpha_L$, but none of them is a stable
+state there (section~\ref{sec:5.3}). The values
+are plotted in figure~\ref{fig:density}, and the $\beta = 45$ row
+reproduces the grid of section~\ref{sec:5.1} exactly, which ties the
+ladder to the grid.
