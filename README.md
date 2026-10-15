@@ -1,10 +1,12 @@
 # A critical coupling for the magnetic instability of holographic SU(2) plasmas
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23267448.svg)](https://doi.org/10.5281/zenodo.23267448)
+[![arXiv](https://img.shields.io/badge/arXiv-2610.14675-b31b1b.svg)](https://arxiv.org/abs/2610.14675)
 
 Code and LaTeX source for the paper
 
-> Migael Strydom, *A critical coupling for the magnetic instability of holographic SU(2) plasmas* (2026).
+> Migael Strydom, *A critical coupling for the magnetic instability of holographic SU(2) plasmas*,
+> [arXiv:2610.14675](https://arxiv.org/abs/2610.14675) [hep-th] (2026).
 
 A strongly magnetised holographic plasma with an SU(2) global symmetry condenses
 into a triangular lattice of vortices. The paper switches on the gravitational
@@ -205,8 +207,9 @@ License (see their headers).
 
 ## Citation and contact
 
-If you use this code, please cite the paper; `CITATION.cff` has the details
-(the arXiv identifier will be added on submission). The code is archived on
+If you use this code, please cite the paper,
+[arXiv:2610.14675](https://arxiv.org/abs/2610.14675) [hep-th];
+`CITATION.cff` has the details. The code is archived on
 Zenodo: version 1.0.0, the version the paper cites, is
 [10.5281/zenodo.23267449](https://doi.org/10.5281/zenodo.23267449), and
 [10.5281/zenodo.23267448](https://doi.org/10.5281/zenodo.23267448) always

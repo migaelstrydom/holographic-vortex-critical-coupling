@@ -27,4 +27,10 @@ preferred-citation:
     - family-names: Strydom
       given-names: Migael
   year: 2026
-  notes: "arXiv identifier to be added on submission"
+  identifiers:
+    - type: other
+      value: "arXiv:2610.14675"
+      description: "arXiv preprint (hep-th)"
+    - type: doi
+      value: 10.48550/arXiv.2610.14675
+  url: "https://arxiv.org/abs/2610.14675"
